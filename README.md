@@ -9,7 +9,7 @@
 ![C++基础](https://img.shields.io/badge/C%2B%2B%E5%9F%BA%E7%A1%80-Done-00599C?style=for-the-badge&logo=c)
 ![C++STL](https://img.shields.io/badge/C%2B%2B_STL-Done-00599C?style=for-the-badge&logo=c)
 ![C++数据结构](https://img.shields.io/badge/C%2B%2B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Done-00599C?style=for-the-badge&logo=c)
-![JavaSE](https://img.shields.io/badge/JavaSE-Done-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaSE](https://img.shields.io/badge/JavaSE-Learning-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 </div>
 
@@ -25,20 +25,20 @@
 
 ## 📊 学习进度总览
 
-| 阶段 | 内容                    |   状态   |     完成度      |
-| :--: | ----------------------- | :------: | :-------------: |
-|  1   | **C 语言**              | ✅ 已完成 | ██████████ 100% |
-|  2   | **C++ 基础语法**        | ✅ 已完成 | ██████████ 100% |
-|  3   | **C++ STL**             | ✅ 已完成 | ██████████ 100% |
-|  4   | **C++ 数据结构**        | ✅ 已完成 | ██████████ 100% |
-|  5   | **JavaSE 基础语法**     | ✅ 已完成 | ██████████ 100% |
-|  6   | **Java 数据结构**       | ✅ 已完成 | ██████████ 100% |
-|  7   | **Java 数据结构进阶课** | ✅ 已完成 | ██████████ 100% |
-|  8   | **MySQL 数据库基础**    | 🔄 学习中 | ████░░░░░░ 40%  |
-|  9   | **JavaEE 初阶**         | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
-|  10  | **JavaEE 进阶**         | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
-|  11  | **SpringCloud 微服务**  | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
-|  12  | **项目实战**            | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+| 阶段 | 内容                   |   状态   |     完成度      |
+| :--: | ---------------------- | :------: | :-------------: |
+|  1   | **C 语言**             | ✅ 已完成 | ██████████ 100% |
+|  2   | **C++ 基础语法**       | ✅ 已完成 | ██████████ 100% |
+|  3   | **C++ STL**            | ✅ 已完成 | ██████████ 100% |
+|  4   | **C++ 数据结构**       | ✅ 已完成 | ██████████ 100% |
+|  5   | **JavaSE 基础语法**    | 🔄 刚起步 | ██░░░░░░░░ 20%  |
+|  6   | **Java 数据结构**      | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  7   | **Java 数据结构进阶**  | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  8   | **MySQL 数据库基础**   | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  9   | **JavaEE 初阶**        | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  10  | **JavaEE 进阶**        | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  11  | **SpringCloud 微服务** | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
+|  12  | **项目实战**           | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
 
 ---
 
@@ -50,17 +50,20 @@
  ✅ C++ STL
  ✅ C++ 数据结构
 
-✅ JavaSE 基础语法
-✅ Java 数据结构
-✅ Java 数据结构进阶课
-
-🔄 MySQL 数据库基础（当前）
+🔄 JavaSE 基础语法（当前）
+ │
+⬜ Java 数据结构
+ │  ├── Java 数据结构进阶
+ │  └── 优选算法（必学）
+ │
+⬜ MySQL 数据库基础
+ │  ├── MySQL 数据库进阶
+ │  └── MySQL 数据库高阶
  │
 ⬜ JavaEE 初阶
  │  ├── JavaEE 进阶
- │  ├── MySQL 数据库进阶
  │  ├── 测试理论与实践
- │  └── 简历
+ │  └── 简历指导
  │
 ⬜ 微服务开发（Java 开发必学）
  │  ├── SpringCloud
@@ -71,17 +74,18 @@
  │  ├── 优选算法（必学）
  │  ├── 递归·搜索与回溯算法（高优先级）
  │  ├── 动态规划算法（高优先级）
- │  └── 贪心算法（高优先级）
+ │  ├── 贪心算法（高优先级）
+ │  └── 笔试强训48天（必学）
  │
 ⬜ 前端基础
- │  ├── 前端基础课
+ │  ├── 前端基础
  │  └── Vue3
  │
 ⬜ 企业级技术
- │  ├── Docker （高优先级）
- │  ├── Git （高优先级）
- │  ├── ProtoBuffer 
- │  └── MySQL 数据库高阶
+ │  ├── Docker（高优先级）
+ │  ├── Git（高优先级）
+ │  ├── ProtoBuffer
+ │  └── Spring AI
  │
 ⬜ 项目实战
     ├── 【标准项目】基于 Spring 全家桶的论坛系统
@@ -110,16 +114,13 @@
 - **迭代器**、函数对象与 Lambda
 - C++ 数据结构实现（链表、栈、队列、二叉树、堆、图）
 
-### 🔵 已完成 · JavaSE
+### 🔴 当前阶段 · JavaSE 基础语法
 
-- 基础语法、面向对象
-- 集合框架（List / Set / Map）
-- 异常处理、IO 流
-- 多线程、网络编程
+- 基础语法、变量、数据类型
+- 面向对象（类与对象、继承、多态）
+- 流程控制、方法与递归
 
-### 🔴 当前阶段 · MySQL 数据库
-
-**MySQL 数据库基础 → MySQL 数据库进阶**
+### ⬜ 待学 · MySQL 数据库
 
 | 课程             |   优先级    | 说明                     |
 | ---------------- | :---------: | ------------------------ |
@@ -127,7 +128,7 @@
 | MySQL 数据库进阶 | ⭐⭐ 高优先级 | 索引优化、事务、锁机制等 |
 | MySQL 数据库高阶 |   ⭐ 中等    | 面试高频考点，冲击大厂   |
 
-### 🔴 当前阶段 · 算法
+### ⬜ 待学 · 算法
 
 **主线：Java 数据结构完成后，同步推进算法学习**
 
@@ -167,10 +168,10 @@ JavaEE 初阶 → JavaEE 进阶
 
 ### ⬜ 待学 · 前端
 
-| 课程       |   优先级    | 说明         |
-| ---------- | :---------: | ------------ |
-| 前端基础课 | ⭐⭐ 高优先级 | 项目必备     |
-| Vue3       |   ⭐ 中等    | 前端框架进阶 |
+| 课程     |   优先级    | 说明         |
+| -------- | :---------: | ------------ |
+| 前端基础 | ⭐⭐ 高优先级 | 项目必备     |
+| Vue3     |   ⭐ 中等    | 前端框架进阶 |
 
 ### ⬜ 待学 · 企业级技术
 
@@ -189,17 +190,17 @@ JavaEE 初阶 → JavaEE 进阶
 - [x] 掌握 C++ 面向对象编程思想
 - [x] 熟练使用 C++ STL
 - [x] 用 C++ 实现常见数据结构与算法
-- [x] 掌握 JavaSE 基础语法
-- [x] 完成 Java 数据结构学习
+- [ ] 掌握 JavaSE 基础语法（进行中）
+- [ ] 完成 Java 数据结构学习
 - [ ] 完成 MySQL 数据库基础 + 进阶
-- [ ] 完成算法精品课 + 笔试强训48天
+- [ ] 完成算法 + 笔试强训48天
 - [ ] 完成 JavaEE 初阶 + 进阶
 - [ ] 完成 SpringCloud + Redis + RabbitMQ
-- [ ] 完成前端基础课 + Vue3
+- [ ] 完成前端基础 + Vue3
 - [ ] 完成 Docker + Git
 - [ ] 完成标准项目实战 × 2+
 - [ ] 完成挑战项目
-- [ ] 完成简历公开课 + 就业课
+- [ ] 完成简历指导 + 就业准备
 
 ---
 
@@ -227,10 +228,10 @@ JavaEE 初阶 → JavaEE 进阶
 | 2025 上半年 | C 语言系统学习                 | ✅ 已完成 |
 | 2025 上半年 | C++ 基础 + STL                 | ✅ 已完成 |
 | 2025 下半年 | C++ 数据结构                   | ✅ 已完成 |
-| 2025 下半年 | JavaSE 基础语法                | ✅ 已完成 |
-|   2026 Q1   | Java 数据结构 + 进阶           | ✅ 已完成 |
-|   2026 Q2   | MySQL 数据库基础 + 进阶        | 🔄 进行中 |
-|   2026 Q2   | 算法精品课 + 笔试强训48天      | 📅 计划中 |
+|   2026 Q1   | JavaSE 基础语法                | 🔄 进行中 |
+|   2026 Q2   | Java 数据结构                  | 📅 计划中 |
+|   2026 Q2   | MySQL 数据库基础 + 进阶        | 📅 计划中 |
+|   2026 Q3   | 算法 + 笔试强训48天            | 📅 计划中 |
 |   2026 Q3   | JavaEE 初阶 + 进阶             | 📅 计划中 |
 |   2026 Q3   | SpringCloud + Redis + RabbitMQ | 📅 计划中 |
 |   2026 Q4   | 前端基础 + Vue3                | 📅 计划中 |
@@ -256,7 +257,7 @@ JavaEE 初阶 → JavaEE 进阶
 <img src="https://img.shields.io/badge/Languages-4-blue?style=flat-square" />
 <img src="https://img.shields.io/badge/C-Done-A8B9CC?style=flat-square" />
 <img src="https://img.shields.io/badge/C%2B%2B-Done-00599C?style=flat-square" />
-<img src="https://img.shields.io/badge/Java-Done-ED8B00?style=flat-square" />
+<img src="https://img.shields.io/badge/Java-Learning-ED8B00?style=flat-square" />
 <img src="https://img.shields.io/badge/MySQL-Learning-00758F?style=flat-square" />
 <img src="https://img.shields.io/badge/Projects-Todo-green?style=flat-square" />
 
