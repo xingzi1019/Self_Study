@@ -246,7 +246,7 @@ JavaEE 初阶 → JavaEE 进阶
 | 《C Primer Plus》 | C 语言入门          | 书籍                                           |
 | 《C++ Primer》    | C++ 系统学习        | 书籍                                           |
 | 《Java 核心技术》 | Java SE 学习        | 书籍                                           |
-| 比特就业课        | Java / 测开系统课程 | [bitejiuyeke.com](https://www.bitejiuyeke.com) |
+| 《Java 测试开发》        | Java / 测开系统课程 | bilibili
 | LeetCode          | 算法练习            | 在线平台                                       |
 | B 站 / 黑马       | 视频辅助学习        | 在线平台                                       |
 
