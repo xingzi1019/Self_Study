@@ -3,7 +3,18 @@ public class NeiZhiTypes {
     static int b; // 全局变量倒是不用初始化就能用 但是为了代码的规范性 还是建议初始化 如果不知道初始化成啥就初始化成 0
     //全局变量要加static符号 这个以后再解释
     static final int c = 0;
-    public static void main(String[] argc) {
+
+    public static void main() {
+        String s = "a";
+        //s += "b";
+        System.out.println(s);
+        String ss = "a";
+        if (s == ss)
+            System.out.println("1");
+        if (s != ss)
+            System.out.println("2");
+    }
+    public static void main2(String[] argc) {
         //Java的内置类型和C++有所不同和增加
         //得益于Java的特性 同一类型无论在多少位的操作系统上 所占据的字节数都是一样的
         //不论是在16位系统还是32位系统，int都占用4个字节，long都占8个字节
