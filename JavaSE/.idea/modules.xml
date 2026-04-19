@@ -4,7 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaSE.iml" filepath="$PROJECT_DIR$/.idea/JavaSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/LuoJiKongZhi/LuoJiKongZhi.iml" filepath="$PROJECT_DIR$/LuoJiKongZhi/LuoJiKongZhi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Method/Method.iml" filepath="$PROJECT_DIR$/Method/Method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operator/Operator.iml" filepath="$PROJECT_DIR$/Operator/Operator.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShuJuLeiXing/ShuJuLeiXing.iml" filepath="$PROJECT_DIR$/ShuJuLeiXing/ShuJuLeiXing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShuRuShuChu/ShuRuShuChu.iml" filepath="$PROJECT_DIR$/ShuRuShuChu/ShuRuShuChu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Temp/Temp.iml" filepath="$PROJECT_DIR$/Temp/Temp.iml" />
     </modules>
   </component>
 </project>

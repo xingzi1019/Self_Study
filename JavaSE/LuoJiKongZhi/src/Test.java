@@ -2,7 +2,39 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Test {
+
+    //求最大公倍数
     static void main() {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int min = Math.min(num1, num2);
+        int max = Math.max(num1, num2);
+        int i = 0;
+        for (i = min; ; i += min) {
+            if ((i % num1 == 0) && (i % num2 == 0)) {
+                break;
+            }
+        }
+        System.out.println(i);
+    }
+
+    //辗转相除求最大公约数
+    static void main15() {
+        Scanner star = new Scanner(System.in);
+        int num1 = star.nextInt();
+        int num2 = star.nextInt();
+        // 24 18 = 1 mod==6
+        // 18 6  = 3 mod==0
+        while (num2 != 0) {
+            int temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
+        }
+        System.out.println(num1);
+    }
+
+    static void main14() {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
         int num = random.nextInt(100) + 1;
@@ -21,6 +53,7 @@ public class Test {
         }
         sc.close();
     }
+
     // 求出0～n之间的所有“水仙花数”并输出。
     // (“水仙花数”是指一个三位数，其各位数字的立方和确好等于该数本身
     // 如；153＝1^3＋5^3＋3^3，则153是一个“水仙花数“。）
