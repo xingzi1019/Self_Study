@@ -38,10 +38,17 @@ public class MyTest {
         int receive = fieBo(n);
         System.out.println(receive);
         sc.close();*/
-        int a =10;
+
+
+        /*int a =10;
         int max = Math.max(10,20);
         System.out.println(a);
         int ret = fieBo(1);
-        System.out.println(ret);
+        System.out.println(ret);*/
+        for (int i = 0; i < 1000; i++) {
+            if (i == 500) {
+                System.out.println("five");
+            }
+        }
     }
 }
