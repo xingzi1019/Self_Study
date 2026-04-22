@@ -5,26 +5,214 @@
 // Shift + F8 快速跑完这个方法 然后停在上层调用处
 // Ctrl  + F5 重新开始调试
 // Alt + Shift + F7 强制进入方法 一般是进入库方法
+// 操作数据工具类Arrays
+// toString：返回数组以字符串的形式
+// sort：将数组排序
+// copyOf：拷贝数组
+// copyOfRange：范围拷贝
+// equals：比较是或相等
+// binarySearch：二分查找元素 // 必须得是升序的
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
+    static void main() {
+        int[] array = new int[10];
+        Arrays.fill(array,3,5,-1);
+        System.out.println(Arrays.toString(array)); // [0, 0, 0, -1, -1, 0, 0, 0, 0, 0]
+        Arrays.fill(array,999);
+        System.out.println(Arrays.toString(array)); // [999, 999, 999, 999, 999, 999, 999, 999, 999, 999]
+    }
+    public static void main17() {
+        // 不规则的二维数组
+        int[][] array1 = new int[2][];
+        // int[][] array2 = new int[][3]; // 报错
+        /*for (int[] a : array1) {
+            for (int x : a) { // 空指针异常
+                System.out.print(x + " ");
+            }
+            System.out.println();
+        }*/
+        array1[0] = new int[3];
+        array1[1] = new int[5];
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[i].length; j++) {
+                System.out.print(array1[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println(Arrays.deepToString(array1)); // [[0, 0, 0], [0, 0, 0, 0, 0]]
+    }
+    // 二维数组
+    public static void main16() {
+        // 创建
+        int[][] array1 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] array2 = new int[2][3]; // 0
+        int[][] array3 = new int[][]{{1, 2, 3}, {4, 5, 6}};
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(array3[i][j] + " ");
+            }
+            System.out.println();
+        }
+        // 这个array3 存放的是一个一维数组的地址
+        // 然后这个一维数组存放了两个地址 这两个地址指向两个对象 这两个对象才是真正存放数据的
+        // 我们可以用下面的代码来验证
+        System.out.println(array3.length); // 2
+        System.out.println(array3[0]); // [I@23fc625e
+        System.out.println(array3[0].length); // 3
+        System.out.println(array3[1].length); // 3
+
+        for (int i = 0; i < array3.length; i++) {
+            for (int j = 0; j < array3[i].length; j++) {
+                System.out.print(array3[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("====== for each ======");
+        for (int[] a : array3) {
+            for (int x : a) {
+                System.out.print(x + " ");
+            }
+            System.out.println();
+        }
+        System.out.println(Arrays.toString(array3)); // [[I@23fc625e, [I@3f99bd52]
+        // 别慌 Java 也提供了二维数组的 toString 方法 deepToString
+        System.out.println(Arrays.deepToString(array3)); // [[1, 2, 3], [4, 5, 6]]
+
+    }
+
+    // 操作数据工具类Arrays
+    // toString：返回数组以字符串的形式
+    // sort：将数组排序
+    // copyOf：拷贝数组
+    // copyOfRange：范围拷贝
+    // equals：比较是或相等
+    // binarySearch：二分查找元素 // 必须得是升序的
+    public static void main15() {
+        int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] arr2 = {10, 1, 9, 2, 8, 3, 4, 6, 5, 7};
+        int[] arr3 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+        int ret1 = Arrays.binarySearch(arr1, 7);
+        int ret2 = Arrays.binarySearch(arr2, 7);
+        int ret3 = Arrays.binarySearch(arr3, 7);
+        System.out.println(ret1); // 6
+        System.out.println(ret2); // -3
+        System.out.println(ret3); // -11
+    }
+
+    public static void main14() {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {1};
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("相等");
+        } else {
+            System.out.println("不相等");
+        }
+        arr2 = Arrays.copyOf(arr1, arr1.length);
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("相等");
+        } else {
+            System.out.println("不相等");
+        }
+    }
+
+    public static void main13() {
+        // 当拷贝的字符长度大于原数组的长度的时候 会自动进行扩容
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = Arrays.copyOf(arr1, arr1.length);
+        int[] arr3 = Arrays.copyOf(arr1, 8);
+        int[] arr4 = Arrays.copyOfRange(arr1, 0, 3);
+        int[] arr5 = Arrays.copyOfRange(arr1, 0, 8);
+        System.out.println(Arrays.toString(arr1)); // [1, 2, 3, 4, 5]
+        System.out.println(Arrays.toString(arr2)); // [1, 2, 3, 4, 5]
+        System.out.println(Arrays.toString(arr3)); // [1, 2, 3, 4, 5, 0, 0, 0]
+        System.out.println(Arrays.toString(arr4)); // [1, 2, 3]
+        System.out.println(Arrays.toString(arr5)); // [1, 2, 3, 4, 5, 0, 0, 0]
+    }
+
+    public static void main12(String[] args) {
+        int[] arr1 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        Arrays.sort(arr1);
+        System.out.println(Arrays.toString(arr1)); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        int[] arr2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        Arrays.sort(arr2, 4, 8);
+        System.out.println(Arrays.toString(arr2));
+    }
+
+    public static String myToString(int[] array) {
+        int len = array.length;
+        String ret = "[";
+        for (int i = 0; i < len; i++) {
+            ret += array[i];
+            if (i != len - 1) {
+                ret += ",";
+            }
+        }
+        ret += "]";
+        return ret;
+    }
+
+    static void main11() {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        System.out.println(myToString(arr));
+        /*String newArr = Arrays.toString(arr);
+        System.out.println(newArr); // [1, 2, 3, 4, 5, 6]*/
+    }
+
+    // Java 可以返回数组类型
+    public static int[] func3() {
+        int a = 1;
+        int b = 2;
+        return new int[]{a, b};
+    }
+
+    public static int[] func2() {
+        int a = 1;
+        int b = 2;
+        int[] ret = new int[]{a, b};
+        return ret;
+    }
+
+    static void main10() {
+        int[] ret = func2();
+        int[] ret1 = ret;
+        printArray(ret1); // 1 2
+
+        String s = Arrays.toString(ret1);
+        // 写完 toString 之后可以 .var 快速定义接收变量
+        System.out.println(s);
+
+        int[] ret2 = func3();
+        String str = Arrays.toString(ret);
+        System.out.println(str);
+
+        System.out.println(Arrays.toString(func3()));
+    }
+
+    // 结论:传引用 不是一定能改变原来实参的值
+    // 需要看你使用引用 是如何做的
+    // 你是修改了形参引用的指向 test2()
+    // 还是通过形参引用 修改了实参引用所指向对象的值? test1()
     public static void test1(int[] array) {
         array[0] = 99;
     }
+
     public static void test2(int[] array) {
         array = new int[]{100, 200, 300, 400, 500};
         // 这里的 array --> 新 new 出来的空间
         // 而不是 指向原本的数组 所以根本就不会改变原对象的数值
     }
+
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
     }
-    static void main() {
+
+    static void main9() {
         int[] array = {1, 2, 3, 4, 5};
         test1(array);
         printArray(array); // 99 2 3 4 5
