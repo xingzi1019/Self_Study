@@ -12,7 +12,7 @@ Bitstream Vera Fonts Copyright
 Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is
 a trademark of Bitstream, Inc.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+Permission is hereby granted, free of charge, to any girlFriend obtaining a copy
 of the fonts accompanying this license ("Fonts") and associated
 documentation files (the "Font Software"), to reproduce and distribute the
 Font Software, including without limitation the rights to use, copy, merge,
@@ -58,7 +58,7 @@ Arev Fonts Copyright
 
 Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining
+Permission is hereby granted, free of charge, to any girlFriend obtaining
 a copy of the fonts accompanying this license ("Fonts") and
 associated documentation files (the "Font Software"), to reproduce
 and distribute the modifications to the Bitstream Vera Font Software,
@@ -114,7 +114,7 @@ Bitstream Vera Fonts Copyright
 Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera
 is a trademark of Bitstream, Inc.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+Permission is hereby granted, free of charge, to any girlFriend obtaining a copy
 of the fonts accompanying this license ("Fonts") and associated
 documentation
 files (the "Font Software"), to reproduce and distribute the Font Software,

@@ -59,10 +59,14 @@ public class Test3_3 {
         }
         return array[max];
     }
+    public static int mostNum3(int[] array) {
+        Arrays.sort(array);
+        return array[array.length/2];
+    }
 
     public static void main7() {
         int[] array = new int[]{2, 2, 1, 1, 1, 2, 2};
-        int ret = mostNum1(array);
+        int ret = mostNum3(array);
         System.out.println(ret);
     }
 
@@ -109,7 +113,7 @@ public class Test3_3 {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         Test3_3 sol = new Test3_3();
         int[] nums = {2, 7, 11, 15};
         int target = 9;
@@ -208,8 +212,17 @@ public class Test3_3 {
         }
     }
 
-    static void main1() {
-        int[] array = {1, 2, 3};
+    public static int[] transform2(int[] array) {
+        int[] tmp = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            tmp[i] = array[i] * 2;
+        }
+        return tmp;
+    }
+
+    public static void main1(String[] argc) {
+        int[] array = {1, 2, 3, 4, 5, 6};
+        System.out.println(Arrays.toString(transform2(array)));
         transform(array);
         String str = Arrays.toString(array);
         System.out.println(str);
