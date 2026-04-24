@@ -1,4 +1,7 @@
+package First;
+
 public class GirlFriend {
+    // 成员变量会被默认初始化
     public String name;
     public int age;
     public String gender;

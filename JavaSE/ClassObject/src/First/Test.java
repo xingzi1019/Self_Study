@@ -1,3 +1,5 @@
+package First;
+
 // 1. 一般一个文件当中只定义一个类
 // 2. public修饰的类必须要和文件名相同
 // 3. 不要轻易去修改public修饰的类的名称，如果要修改，通过开发工具修改
@@ -5,8 +7,34 @@
 // 类是图纸
 // 对象是实体
 // 类产生对象的过程叫做类的实例化
+// new 关键字用于创建一个对象的实例.
+// 使用 . 来访问对象中的属性和方法.
+// 同一个类可以创建多个实例
+// 一个对象的产生总结起来 至少要分两步
+// 1.分配内存
+// 2.调用合适的构造方法(构造方法可以有很多个)
 public class Test {
+
     public static void main() {
+        Dog dog1 = new Dog();
+        dog1.name = "小白";
+    }
+
+    public static void main5() {
+        Dog dog1 = new Dog();
+        // 一个引用可以同时指向多个对象吗 !!!不行!!!
+        dog1 = new Dog();
+        dog1 = new Dog(); // 中间对象会被 JVM 回收
+        dog1 = new Dog(); // 最后赋值的值才是有效的
+    }
+
+    public static void main4() {
+        Dog dog = null; // 这个引用不指向任何对象
+        System.out.println(dog.name); // 会抛出空指针异常
+        System.out.println(dog.age);
+    }
+
+    public static void main3() {
         GirlFriend girlFriend1 = new GirlFriend();
         girlFriend1.name = "薇尔莉特";
         girlFriend1.age = 18;

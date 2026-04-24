@@ -1,3 +1,5 @@
+package First;
+
 // 类名用大驼峰命名
 public class WashMachine {
     public String brand;  // 品牌
