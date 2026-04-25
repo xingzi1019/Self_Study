@@ -1,4 +1,4 @@
-package First;
+package first;
 
 // 1. 一般一个文件当中只定义一个类
 // 2. public修饰的类必须要和文件名相同

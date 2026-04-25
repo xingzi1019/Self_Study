@@ -1,4 +1,4 @@
-package Second;
+package second;
 
 public class Person {
     public String name;

@@ -1,4 +1,4 @@
-package First;
+package first;
 
 public class Dog {
     public String name = "Íú²Æ";

@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ClassObject(1)/ClassObject.iml" filepath="$PROJECT_DIR$/ClassObject(1)/ClassObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassObject1/ClassObject.iml" filepath="$PROJECT_DIR$/ClassObject1/ClassObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassObject2/ClassObject2.iml" filepath="$PROJECT_DIR$/ClassObject2/ClassObject2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Debugging/Debugging.iml" filepath="$PROJECT_DIR$/Debugging/Debugging.iml" />
       <module fileurl="file://$PROJECT_DIR$/AaaHomeWork/HomeWork.iml" filepath="$PROJECT_DIR$/AaaHomeWork/HomeWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaSE.iml" filepath="$PROJECT_DIR$/.idea/JavaSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/LogicControl/LuoJiKongZhi.iml" filepath="$PROJECT_DIR$/LogicControl/LuoJiKongZhi.iml" />
       <module fileurl="file://$PROJECT_DIR$/Method/Method.iml" filepath="$PROJECT_DIR$/Method/Method.iml" />

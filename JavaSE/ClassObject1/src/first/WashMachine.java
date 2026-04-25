@@ -1,4 +1,4 @@
-package First;
+package first;
 
 // 类名用大驼峰命名
 public class WashMachine {

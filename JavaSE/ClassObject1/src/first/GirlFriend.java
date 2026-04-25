@@ -1,4 +1,4 @@
-package First;
+package first;
 
 public class GirlFriend {
     // 成员变量会被默认初始化

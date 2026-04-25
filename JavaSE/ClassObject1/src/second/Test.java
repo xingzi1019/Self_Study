@@ -1,10 +1,8 @@
-package Second; // 声明当前 java 类是在哪个包(文件夹)下的
+package second; // 声明当前 java 类是在哪个包(文件夹)下的
 
 import java.util.Arrays;
 import java.util.Scanner; // 这个过程就叫做导包
 //import java.sql.*; // // * 不是导入所有的意思 而是用到谁就会匹配谁
-import java.util.*; // 如果上面的取消注释 编译器就会不知道 Data 是哪一个包的
-import java.sql.*;
 //import java.lang.Math;
 import static java.lang.Math.*; // 尽量不要导入包中静态的方法和变量
 

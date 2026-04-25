@@ -1,4 +1,5 @@
-package First;
+package first;
+// 包名必须是小写
 
 public class Date {
     // 成员变量
@@ -49,6 +50,8 @@ public class Date {
     }
     // 1.this通过 . 访问成员变量
     // 2.this.func(); 调用"成员方法"
+    // this(参数列表) 访问当前对象的构造方法
+    // 不能通过点号访问构造方法
     public static void main() {
         Date date1 = new Date();
         date1.setDay(2026, 4, 24);
