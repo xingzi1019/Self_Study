@@ -1,5 +1,7 @@
-package demo1;
-
+// 在方法当中定义的变量是局部变量，而静态的变量属于类变量
+// 所以方法里面不能有 static 修饰的变量
+package demo11;
+// import 只能导入一个具体的类
 public class Test {
     // 代码块:
     // 1.普通代码块

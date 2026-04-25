@@ -1,9 +1,10 @@
 package demo1;
-//           派生类       基类/超类
+// 子类构造之前要先构造父类
 public class Cat extends Animal {
-
-    public void bark() {
-        System.out.println(this.name + " 正在汪汪叫......");
+    public Cat() {
+        super("李四",9);
     }
-
+    public void mew() {
+        System.out.println(this.name + " 正在喵喵喵......");
+    }
 }

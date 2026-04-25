@@ -2,7 +2,7 @@ package second; // 声明当前 java 类是在哪个包(文件夹)下的
 
 import java.util.Arrays;
 import java.util.Scanner; // 这个过程就叫做导包
-//import java.sql.*; // // * 不是导入所有的意思 而是用到谁就会匹配谁
+//import java.sql.*; // // * 导入 sql 里面所有的类
 //import java.lang.Math;
 import static java.lang.Math.*; // 尽量不要导入包中静态的方法和变量
 

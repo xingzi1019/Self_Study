@@ -1,4 +1,4 @@
-package demo2;
+package demo22;
 
 public class Base {
     public int a = 1;

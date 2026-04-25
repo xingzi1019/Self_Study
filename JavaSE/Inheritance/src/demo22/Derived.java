@@ -1,4 +1,4 @@
-package demo2;
+package demo22;
 // 静态方法里面是不能使用 this 和 super 的
 public class Derived extends Base {
     public int a = 100;

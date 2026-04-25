@@ -1,4 +1,4 @@
-package demo2;
+package demo22;
 
 public class Test {
     public static void main() {
