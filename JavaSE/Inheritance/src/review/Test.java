@@ -1,6 +1,10 @@
-package Try;
+package review;
 
 public class Test {
+    public Test() {
+        System.out.println("调用了Test无参构造");
+    }
+
     public static void main() {
         Girl girl1 = new Girl();
         System.out.println(girl1);

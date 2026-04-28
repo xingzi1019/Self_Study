@@ -1,8 +1,8 @@
-package Try;
+package review;
 
 public class Student {
     int id; // 不能加 private 加了 Boy 和 Girl 就访问不了了
-    String name;
+    String name; // 包访问权限
     int age;
     String gender;
 

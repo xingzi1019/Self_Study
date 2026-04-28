@@ -1,4 +1,4 @@
-package Try;
+package review;
 
 public class Girl extends Student {
     public int beauty;
