@@ -10,6 +10,8 @@ public class Test {
     // 1.直接赋值  main2 Animal animal = new Dog("旺财", 2);
     // 2.参数的传递 main3
     // 3.返回值
+    // 向上转型的优点：让代码实现更简单灵活。
+    // 向上转型的缺陷：不能调用到子类特有的方法
     public static void func(Animal animal) {
     }
 
@@ -48,3 +50,9 @@ public class Test {
 // 1.重写
 // 2.向上转型
 // 3.动态绑定
+
+// 向下转型
+
+// 多态的优缺点
+// 能够降低代码的 "圈复杂度", 避免使用大量的 if - else
+// 可拓展功能更强
