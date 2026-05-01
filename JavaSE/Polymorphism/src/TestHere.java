@@ -3,7 +3,7 @@
 // 2. 子类必须要对父类中方法进行重写
 // 3. 通过父类的引用调用重写的方法
 // 多态体现：在代码运行时，当传递不同类对象时，会调用对应类中的方法
-public class Test {
+public class TestHere {
     // 向上转型
     // 父类引用 引用了子类对象
     // 有三种情况可以触发
@@ -21,6 +21,7 @@ public class Test {
     }
 
     public static void main() {
+        System.out.println("Out");
         Dog dog = new Dog("旺财", 2);
         func(dog); // 参数的传递带来的向上转型
         Cat cat = new Cat("咪咪", 1);
