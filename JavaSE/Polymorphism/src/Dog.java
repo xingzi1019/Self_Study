@@ -6,6 +6,7 @@ public class Dog extends Animal {
     public void bark() {
         System.out.println(this.name + "正在汪汪叫...");
     }
+
     @Override // 一般也加一个Override 一样的 IDEA 可以帮我们生成
     public void eat() {
         System.out.println(this.name + "正在吃狗粮...");

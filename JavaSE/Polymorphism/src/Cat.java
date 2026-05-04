@@ -10,6 +10,6 @@ public class Cat extends Animal {
 
     @Override
     public void eat() {
-        System.out.println(this.name+"正在吃猫粮...");
+        System.out.println(this.name + "正在吃猫粮...");
     }
 }
