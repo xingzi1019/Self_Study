@@ -11,9 +11,26 @@ public class TestHere {
     // 1.直接赋值  main2 Animal animal = new Dog("旺财", 2);
     // 2.参数的传递 main3
     // 3.返回值
-    // 向上转型的优点：让代码实现更简单灵活。
+    // 向上转型的优点：让代码实现更简单灵活
     // 向上转型的缺陷：不能调用到子类特有的方法
+    public static void eattng(Animal animal) {
+        animal.eat(); // 重写了 就调用子类的 没有重写就调用父类自己的
+    }
+
+    public static void main() {
+        Dog dog = new Dog("旺财", 2);
+        eattng(dog); // 旺财正在吃狗粮...
+        Cat cat = new Cat("咪咪", 1);
+        eattng(cat); // 咪咪正在吃猫粮...
+    }
+    // 做个总结
+    // 同一个引用 同一个方法
+    // 引用的对象不一样 调用同一个方法
+    // 所表现的行为不一样 我们把这种思想就称之为多态
+    // 1.向上转型 2.发生重写 3.动态绑定
+
     public static void func(Animal animal) {
+
     }
 
     public static Animal func2() {
@@ -22,7 +39,17 @@ public class TestHere {
         // return new Dog("旺财", 2); // 这个也是 只是自己没见过这中写法
     }
 
-    public static void main() {
+    public static void main4() {
+        Animal animal = new Dog("旺财", 2);
+        System.out.println(animal.name); // 旺财
+        // animal.color(); // 报错
+        // animal.bark(); // 报错 只能调用 animal 引用所属的类的成员
+        animal.eat(); // 旺财正在吃狗粮...     // 奇怪的是 这么为什么调用了 Dog 的 eat
+        // 这就是动态绑定(运行时绑定)
+        // 父类引用子类对象 通过父类引用 调用了这个重写的方法
+    }
+
+    public static void main3() {
         System.out.println("Out");
         Dog dog = new Dog("旺财", 2);
         func(dog); // 参数的传递带来的向上转型
