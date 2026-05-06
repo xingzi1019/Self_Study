@@ -1,3 +1,5 @@
+package demo1;
+
 public class Dog extends Animal {
     public String color;
     public Dog(String name, int age) {

@@ -1,3 +1,6 @@
+// 重写方法不允许抛出比被重写方法更广泛的检查异常
+package demo1;
+
 // 在Java中要实现多态，必须要满足如下几个条件，缺一不可：
 // 1. 必须在继承体系下
 // 2. 子类必须要对父类中方法进行重写
@@ -8,16 +11,36 @@ public class TestHere {
     // 实际就是创建一个子类对象，将其当成父类对象来使用
     // 父类引用 引用了子类对象
     // 有三种情况可以触发
-    // 1.直接赋值  main2 Animal animal = new Dog("旺财", 2);
+    // 1.直接赋值  main2 demo1.Animal animal = new demo1.Dog("旺财", 2);
     // 2.参数的传递 main3
     // 3.返回值
     // 向上转型的优点：让代码实现更简单灵活
     // 向上转型的缺陷：不能调用到子类特有的方法
-    public static void eattng(Animal animal) {
-        animal.eat(); // 重写了 就调用子类的 没有重写就调用父类自己的
+    public static void main() {
+        Animal animal = new Dog("旺财", 2);
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal; // 向下转型
+            dog.bark();
+        }
+        System.out.println("==========");
+        if (animal instanceof Cat) { // 理解为 animal 是不是 Cat 的引用对象或者实例
+            Cat cat = (Cat) animal; // 这个时候的 animal 已经是 Dog 类型 所以都是子类没法强转
+            cat.mew();
+        } else {
+            System.out.println("animal not instanceof Cat");
+        }
+        // 向下转型
+        // 把父类类型给到了子类类型
+        // 不安全 因此引进关键字 instanceof
+        // 把持向下转型有 if instances else 的这种习惯
     }
 
-    public static void main() {
+    public static void eattng(Animal animal) {
+        animal.eat(); // 重写了 就调用子类的 没有重写就调用父类自己的
+        // 这一块就是多态
+    }
+
+    public static void main5() {
         Dog dog = new Dog("旺财", 2);
         eattng(dog); // 旺财正在吃狗粮...
         Cat cat = new Cat("咪咪", 1);
@@ -36,7 +59,7 @@ public class TestHere {
     public static Animal func2() {
         Dog dog = new Dog("旺财", 2);
         return dog; // 返回值触发向上转型
-        // return new Dog("旺财", 2); // 这个也是 只是自己没见过这中写法
+        // return new demo1.Dog("旺财", 2); // 这个也是 只是自己没见过这中写法
     }
 
     public static void main4() {
@@ -44,7 +67,7 @@ public class TestHere {
         System.out.println(animal.name); // 旺财
         // animal.color(); // 报错
         // animal.bark(); // 报错 只能调用 animal 引用所属的类的成员
-        animal.eat(); // 旺财正在吃狗粮...     // 奇怪的是 这么为什么调用了 Dog 的 eat
+        animal.eat(); // 旺财正在吃狗粮...     // 奇怪的是 这么为什么调用了 demo1.Dog 的 eat
         // 这就是动态绑定(运行时绑定)
         // 父类引用子类对象 通过父类引用 调用了这个重写的方法
     }
@@ -59,8 +82,8 @@ public class TestHere {
     }
 
     public static void main2() {
-        /*Dog dog = new Dog("旺财", 2);
-        Animal animal = dog;*/
+        /*demo1.Dog dog = new demo1.Dog("旺财", 2);
+        demo1.Animal animal = dog;*/
         // 上面两行和下面这行代码一样
         Animal animal = new Dog("旺财", 2);
         // 虽然类型不一样但是有继承关系
