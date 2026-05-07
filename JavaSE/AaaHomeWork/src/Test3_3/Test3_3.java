@@ -1,6 +1,6 @@
-import java.util.Arrays;
+package Test3_3;
 
-import static java.util.Collections.swap;
+import java.util.Arrays;
 
 public class Test3_3 {
     // 给你一个整数数组 arr，请你判断数组中是否存在连续三个元素都是奇数的情况

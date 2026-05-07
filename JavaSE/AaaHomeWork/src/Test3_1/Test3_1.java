@@ -1,3 +1,5 @@
+package Test3_1;
+
 import java.util.Scanner;
 
 //递归求解汉诺塔问题
@@ -27,7 +29,7 @@ public class Test3_1 {
 }
 
 //递归求斐波那契数列的第 N 项
-//public class Test3_1 {
+//public class Test3_1.Test3_1 {
 //    public static int fun(int n) {
 //        if(n == 1 || n == 2) {
 //            return 1;
@@ -43,7 +45,7 @@ public class Test3_1 {
 //}
 
 //写一个递归方法，输入一个非负整数，返回组成它的数字之和
-//public class Test3_1 {
+//public class Test3_1.Test3_1 {
 //    public static int fun(int n) {
 //        if (n == 0) {
 //            return 0;
@@ -61,7 +63,7 @@ public class Test3_1 {
 //}
 
 //按顺序打印一个数字的每一位(例如 1234 打印出 1 2 3 4) (递归)
-//public class Test3_1 {
+//public class Test3_1.Test3_1 {
 //    public static void fun(int n) {
 //        int temp = n % 10;
 //        if (n > 10) {
@@ -76,7 +78,7 @@ public class Test3_1 {
 //}
 
 //递归求 1 + 2 + 3 + ... + 10
-//public class Test3_1 {
+//public class Test3_1.Test3_1 {
 //    public static int fun(int n) {
 //        if (n == 1)
 //            return 1;
@@ -89,7 +91,7 @@ public class Test3_1 {
 //}
 
 //递归求 N 的阶乘
-//public class Test3_1 {
+//public class Test3_1.Test3_1 {
 //    public static int fun(int n) {
 //        if (n==1)
 //            return 1;
