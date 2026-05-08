@@ -1,7 +1,7 @@
 package demo2;
 
 public class Test {
-    public static void drawMap(IShape iShape) {
+    public static void drawMap(IShape iShape) { // 有向上转型的发生
         iShape.draw();
     }
 
@@ -9,8 +9,8 @@ public class Test {
         drawMap(new Cycle());
         drawMap(new Flower());
         IShape[] iShapes = {new Cycle(), new Flower()};
-        for (IShape iShape : iShapes) {
-            iShape.draw();
+        for (IShape shp : iShapes) {
+            shp.draw();
         }
     }
 

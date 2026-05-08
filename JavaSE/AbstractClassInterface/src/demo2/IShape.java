@@ -15,6 +15,6 @@ public interface IShape {
 
     }
     public default void test2() {
-        // 这个叫默认方法
+        // 这个叫默认方法 Java 8 新增的
     }
 }
