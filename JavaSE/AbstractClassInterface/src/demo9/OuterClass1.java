@@ -22,7 +22,7 @@ public class OuterClass1 {
             System.out.println(data1);      // 111111
             System.out.println(this.data1); // 111111
             // 优先使用局部变量 那么如何访问外部类的同名成员呢
-            System.out.println(data2);
+            System.out.println(OuterClass1.this.data2);
             System.out.println(data3);
             System.out.println(data4);
             System.out.println(data5);
