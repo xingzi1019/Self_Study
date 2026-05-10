@@ -9,4 +9,7 @@ public abstract class Shape {
     /*{
         System.out.println("»­Ò»¸öÍ¼ÐÎ...");
     }*/
+    private void aa() {
+        System.out.println("..00");
+    }
 }
