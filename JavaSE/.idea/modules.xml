@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/Polymorphism/Polymorphism.iml" filepath="$PROJECT_DIR$/Polymorphism/Polymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataType/ShuJuLeiXing.iml" filepath="$PROJECT_DIR$/DataType/ShuJuLeiXing.iml" />
       <module fileurl="file://$PROJECT_DIR$/InputAndOutput/ShuRuShuChu.iml" filepath="$PROJECT_DIR$/InputAndOutput/ShuRuShuChu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZzzTemp/Temp.iml" filepath="$PROJECT_DIR$/ZzzTemp/Temp.iml" />
     </modules>
   </component>
