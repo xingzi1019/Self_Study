@@ -3,14 +3,28 @@ package demo1;
 // 本章对比前几章的多态 接口 等等相对比较简单
 // 本章内容起始有一部分是和 C++ 当初学 string 一样的
 public class Test {
-    // inter 方法
+    // 字符串最后一个单词的长度
     public static void main() {
-        char[] ch = new char[]{'a', 'b', 'c'};
+        
+    }
+
+    // inter 方法
+    public static void main14() {
+        /*char[] ch = new char[]{'a', 'b', 'c'};
         String s1 = new String(ch);
         String s2 = "abc";
         System.out.println(s1 == s2);      // false
-        System.out.println(s1.equals(s2)); // true    内容一样
+        System.out.println(s1.equals(s2)); // true    内容一样*/
         // 不懂就看课件的内存图
+        char[] ch = new char[]{'a', 'b', 'c'};
+        String s1 = new String(ch);
+        s1.intern(); // 入池操作 常量池没有才入池
+        // 把 s1 所指的对象放进去
+        String s2 = "abc";
+        System.out.println("s1地址: 0x" + Integer.toHexString(System.identityHashCode(s1))); // s1地址: 0xf6f4d33
+        System.out.println("s2地址: 0x" + Integer.toHexString(System.identityHashCode(s2))); // s2地址: 0xf6f4d33
+        System.out.println(s1 == s2);      // true
+        System.out.println(s1.equals(s2)); // true
     }
 
     // 去除字符串左右两边的空格
