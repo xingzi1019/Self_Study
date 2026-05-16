@@ -3,9 +3,136 @@ package demo1;
 // 本章对比前几章的多态 接口 等等相对比较简单
 // 本章内容起始有一部分是和 C++ 当初学 string 一样的
 public class Test {
-    // 字符串最后一个单词的长度
     public static void main() {
-        
+        StringBuffer stringBuffer = new StringBuffer("hello");
+        StringBuffer delete = stringBuffer.delete(2,4);
+        System.out.println(delete);       // heo  [2,4) 删除了下标2和3
+        System.out.println(stringBuffer); // heo 所以说修改的是同一个对象
+    }
+
+    // StringBuffer StringBuilder
+    public static void main18() {
+        StringBuffer stringBuffer = new StringBuffer("hello"); // 不能直接赋值 只能 new
+        System.out.println(stringBuffer); // hello
+        stringBuffer.append("ok");
+        stringBuffer.append(10);
+        System.out.println(stringBuffer); // hellook10
+
+        StringBuilder stringBuilder = new StringBuilder("abcd");
+        stringBuilder.append("ok");
+        stringBuilder.append(666);
+        System.out.println(stringBuilder); // abcdok666
+
+        String str = "abcd";
+        System.out.println(str); // abcd
+
+        // StringBuffer 有 synchronized 类似锁的意思 多线程下要考虑安全问题
+        // StringBuilder 没有 synchronized 单线程下使用效率比较高
+    }
+
+    // 字符串的修改
+    public static void main17(String[] args) {  // 通过下⾯的例⼦直观感受⼀下运⾏的效率
+        // 1
+        long start = System.currentTimeMillis();
+        String s = "";
+        for (int i = 0; i < 10000; ++i) {
+            s += i;
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start); // 51 博哥是123
+
+        // 2 StringBuffer 使用的都是同一个对象 所以效率会比较高
+        start = System.currentTimeMillis();
+        StringBuffer sbf = new StringBuffer("");
+        for (int i = 0; i < 10000; ++i) {
+            sbf.append(i);
+        }
+        end = System.currentTimeMillis();
+        System.out.println(end - start); // 1 博哥是2
+
+        // 3 StringBuilder 使用的是同一个对象 所以效率会比较高
+        start = System.currentTimeMillis();
+        StringBuilder sbd = new StringBuilder();
+        for (int i = 0; i < 10000; ++i) {
+            sbd.append(i);
+        }
+        end = System.currentTimeMillis();
+        System.out.println(end - start); // 0 博哥是1
+        // 上面3个每次运行的结果都不太一样
+
+        // StringBuffer stringBuffer = "hello"; // error StringBuffer 不能直接赋值
+    }
+
+    public static void main16() {
+        String s = "hello ";
+        s += "world";
+        System.out.println(s); // hello world
+        // 是产生新的对象 原本的旧对象会被 JVM 回收
+        // 而不是在原来的对象上修改
+        // 而产生和消除对象是有时间损耗的
+    }
+
+    // 字符串的不可变性
+    // 1.String类在设计时就是不可改变的，String类实现描述中已经说明了
+    // 2.所有涉及到可能修改字符串内容的操作都是创建⼀个新对象，改变的是新对象
+    // 3.String之所以不可以被修改的原因是内部数组因为为私有成员
+
+    // 验证回文串
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase(); // 转换成小写
+        // 法一正则表达式
+        /*s = s.replaceAll("[^a-zA-Z0-9]", ""); // 将字母以外的符号用空串替代 正则表达式需要系统学一下
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            char ch1 = s.charAt(l);
+            char ch2 = s.charAt(r);
+            if (ch1 != ch2) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;*/
+
+        // 法二
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+            // 保证 i 和 j 拿到的都是字母或者数字   注意: 下面的 i < j 不能简略掉
+            while (i < j && !isNumberOrCharacter(s.charAt(i))) {
+                i++;
+            }
+            while (i < j && !isNumberOrCharacter(s.charAt(j))) {
+                j--;
+            }
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            } else {
+                i++;
+                j--;
+            }
+        }
+        return true;
+    }
+
+    private boolean isNumberOrCharacter(char ch) {
+        if ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            return true;
+        }
+        return false;
+    }
+
+    // 字符串最后一个单词的长度
+    public static void main15() {
+        // 方案一
+        // 1.lastIndexOf(" ") 找到最后一个空格的下标
+        // 2.subString(index + 1) 截取最后一个空格下一位到结束就是最后一个单词了
+        // 3.str.length() 算最后一个单词的长度就够了
+        // 方案二
+        // 1.spilt(" ") 分割
+        // 2.用数组存储第一步分割的结果 那么数组的最后一个元素就是最后一个单词了
+        // 3.此时再求长度就可以了
     }
 
     // inter 方法
