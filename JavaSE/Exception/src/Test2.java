@@ -4,6 +4,8 @@ public class Test2 {
     // 在写程序时，有些特定的代码，不论程序是否发⽣您常，都需要执⾏
     // ⽐如程序中打开的资源：⽹络连接、数据库连接、IO流等，在程序正常或者您常退出时，必须要对资源进进⾏回收
     // 另外，因为您常会引发程序的跳转，可能导致有些语句执⾏不到，finally就是⽤来解决这个问题的
+
+    // finally 中的 return 语句会覆盖 try 或 catch 的 return 语句
     public static void main() {
 
     }
