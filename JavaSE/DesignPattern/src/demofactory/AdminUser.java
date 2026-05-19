@@ -7,6 +7,6 @@ public class AdminUser extends User {
 
     @Override
     public void menu() {
-
+        System.out.println("管理员的菜单...");
     }
 }

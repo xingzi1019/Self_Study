@@ -1,10 +1,13 @@
 package demosingleton;
 
+import com.bit.utils.FileUtils;
+
 public class Test {
     // 单例模式
     public static void main() {
         Singleton2 instance = Singleton2.getInstance();
         Singleton2 singleton2 = Singleton2.getInstance();
+        FileUtils.readFile("a"); // 说明 jar 包 导入没问题
     }
 
     public static void main1() {

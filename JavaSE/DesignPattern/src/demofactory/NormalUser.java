@@ -7,6 +7,6 @@ public class NormalUser extends User {
 
     @Override
     public void menu() {
-
+        System.out.println("普通用户的菜单...");
     }
 }
