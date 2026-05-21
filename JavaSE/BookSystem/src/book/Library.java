@@ -12,3 +12,5 @@ public class Library {
     private static Library library;
     public Scanner sc;
 }
+// 实例化 Library --> 加载文件当中的内容 --> 对文件进行操作(上架 更新)
+// --> 将操作后的数据写入文件
