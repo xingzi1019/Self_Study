@@ -2,7 +2,7 @@ package book;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+// 就是一本书 同时提供将书籍信息转换成字符串的 toJSON 方法
 public class Book {
     private int bookID;
     private String title;

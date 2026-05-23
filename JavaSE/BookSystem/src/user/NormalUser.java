@@ -11,7 +11,7 @@ public class NormalUser extends User {
 
     @Override
     public int display() {
-        System.out.println("普通⽤⼾ " + getName() + " 的操作菜单:");
+        System.out.println("普通用户 " + getName() + " 的操作菜单:");
         System.out.println("1. 查找图书");
         System.out.println("2. 打印所有的图书");
         System.out.println("3. 退出系统");

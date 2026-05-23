@@ -1,10 +1,18 @@
 package user;
 
+import book.Library;
+import constant.Constant;
+import utils.PermissionException;
+
+import javax.naming.NoPermissionException;
+
 public class ProxyUser {
     private User realuser;
+    private Library library;
 
     public ProxyUser(User user) {
         this.realuser = user;
+        library = Library.getLibrary();
     }
 
     public int display() {
@@ -16,8 +24,21 @@ public class ProxyUser {
     }
 
     // ============== 管理员的方法 ================
+    private void checkRealUserWhetherAdminUser(String msg) {
+        if (!((this.realuser) instanceof AdminUser)) {
+            throw new PermissionException(msg);
+        }
+    }
+
     //上架图书
     public void addBook() {
+        System.out.println("Proxy 的 addBook 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限添加书籍");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser) this.realuser).addBook();
     }
 
     //图书修改 ⽀持修改书名 作者 类别
@@ -55,9 +76,19 @@ public class ProxyUser {
 
     public void exit() {
     }
+
     //============ 普通用户的方法 =========
+    private void checkRealUserWhetherNormalUser(String exceptionMessage) {
+        if (!(this.realuser instanceof NormalUser)) {
+            throw new PermissionException(exceptionMessage);
+        }
+    }
+
     //借阅图书
     public void borrowBook() {
+        System.out.println("Proxy 的 borrowBook 方法执行了");
+        checkRealUserWhetherAdminUser("管理员不能借阅图书,换成普通学生");
+        ((NormalUser) this.realuser).borrowBook();
     }
 
     //归还图书
@@ -65,6 +96,65 @@ public class ProxyUser {
     }
 
     // 查看个⼈借阅情况
-    public void viewBorrowBooks() {
+    public void viewBorrowHistory() {
+    }
+
+    public void handleOperation(int choice) {
+        if (realuser instanceof AdminUser) {
+            switch (choice) {
+                case Constant.SEARCH_BOOK:
+                    library.searchBook();
+                    break;
+                case Constant.DISPLAY_BOOK:
+                    library.displayBooks();
+                    break;
+                case Constant.EXIT:
+                    library.exit();
+                    break;
+                case Constant.ADD_BOOK:
+                    addBook();
+                    break;
+                case Constant.UPDATE_BOOK:
+                    updateBook();
+                    break;
+                case Constant.REMOVE_BOOK:
+                    removeBook();
+                    break;
+                case Constant.BORROWED_BOOK_COUNT:
+                    borrowCount();
+                    break;
+                case Constant.GENERATE_BOOK:
+                    generateBook();
+                    break;
+                case Constant.CHECK_INVENTORY_STATUS:
+                    checkInventoryStatus();
+                    break;
+                case Constant.CHECK_AND_REMOVE_OLD_BOOK:
+                    checkAndRemoveOldBooks();
+                default:
+                    break;
+            }
+        } else {
+            switch (choice) {
+                case Constant.SEARCH_BOOK:
+                    library.searchBook();
+                    break;
+                case Constant.DISPLAY_BOOK:
+                    library.displayBooks();
+                    break;
+                case Constant.EXIT:
+                    library.exit();
+                    break;
+                case Constant.BORROWED_BOOK:
+                    borrowBook();
+                    break;
+                case Constant.RETURN_BOOK:
+                    returnBook();
+                    break;
+                case Constant.VIEW_BORROW_HISTORY_BOOK:
+                    viewBorrowHistory();
+                    break;
+            }
+        }
     }
 }

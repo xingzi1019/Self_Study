@@ -62,7 +62,7 @@ public class AnalyingBook {
         book.setCategory(parts[3]);
         book.setPublishYear(Integer.parseInt(parts[4]));
         book.setShelfDate(LocalDate.parse(parts[7]));
-        // 因为当初没传参 
+        // 因为当初没传参
         if (book.getTitle() != null
                 && book.getAuthor() != null
                 && book.getCategory() != null
@@ -85,8 +85,14 @@ public class AnalyingBook {
         books[4] = new Book("《缺氧攻略》", "克莱", "游戏", 2023, LocalDate.now());
         AnalyingBook analyingBook = new AnalyingBook();
         try {
-            analyingBook.storeObject(books, "AllBooks.txt");
-            Book[] ret = analyingBook.loadObject("AllBooks.txt");
+            // 注释掉的这个耦合性太强了 不利于代码的维护
+            // Book[] ret = analyingBook.loadObject("AllBooks.txt");
+            // analyingBook.storeObject(books, "AllBooks.txt");
+            analyingBook.storeObject(books, Constant.ALL_BOOK_FILE_NAME);
+            Book[] ret = analyingBook.loadObject(Constant.ALL_BOOK_FILE_NAME);
+            for (int i = 0; i < ret.length; i++) {
+                System.out.println(ret[i]);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
