@@ -43,38 +43,94 @@ public class ProxyUser {
 
     //图书修改 ⽀持修改书名 作者 类别
     public void updateBook() {
+        System.out.println("Proxy 的 updateBook 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限修改书籍信息");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).updateBook();
     }
 
     //删除书籍
     public void removeBook() {
-
+        System.out.println("Proxy 的 removeBook 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限删除书籍");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).removeBook();
     }
 
     //统计每本书的借阅次数
     public void borrowCount() {
+        System.out.println("Proxy 的 borrowCount 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限统计书籍借阅次数");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).borrowCount();
     }
 
     //查询最受欢迎的前n本书
     public void generateBook() {
+        System.out.println("Proxy 的 generateBook 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限查询受欢迎的书籍");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).generateBook();
     }
 
     //查看库存状态
     public void checkInventoryStatus() {
+        System.out.println("Proxy 的 checkInventoryStatus 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限查询库存状态");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).checkInventoryStatus();
     }
 
     //按照类别 统计图书
     public void categorizeBooksByCategory() {
+        System.out.println("Proxy 的 categorizeBooksByCategory 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限按类别统计图书");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).categorizeBooksByCategory();
     }
 
     //按照作者统计图书
     public void categorizeBooksByAuthor() {
+        System.out.println("Proxy 的 categorizeBooksByAuthor 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限按作者统计图书");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).categorizeBooksByAuthor();
     }
 
     //并移除上架超过⼀年的图书
     public void checkAndRemoveOldBooks() {
+        System.out.println("Proxy 的 checkAndRemoveOldBooks 方法执行了");
+        try {
+            checkRealUserWhetherAdminUser("普通星炬学生没有权限移除旧图书");
+        } catch (PermissionException e) {
+            e.printStackTrace();
+        }
+        ((AdminUser)this.realuser).checkAndRemoveOldBooks();
     }
 
     public void exit() {
+
     }
 
     //============ 普通用户的方法 =========
@@ -93,10 +149,16 @@ public class ProxyUser {
 
     //归还图书
     public void returnBook() {
+        System.out.println("Proxy 的 returnBook 方法执行了");
+        checkRealUserWhetherAdminUser("管理员不能归还图书,换成普通学生");
+        ((NormalUser) this.realuser).returnBook();
     }
 
     // 查看个⼈借阅情况
     public void viewBorrowHistory() {
+        System.out.println("Proxy 的 viewBorrowHistory 方法执行了");
+        checkRealUserWhetherAdminUser("管理员不能归还图书,换成普通学生");
+        ((NormalUser) this.realuser).viewBorrowHistory();
     }
 
     public void handleOperation(int choice) {

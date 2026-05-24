@@ -31,6 +31,7 @@ public class NormalUser extends User {
     }
 
     // 查看个⼈借阅情况
-    public void viewBorrowBooks() {
+    public void viewBorrowHistory() {
+
     }
 }
