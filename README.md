@@ -9,7 +9,7 @@
 ![C++基础](https://img.shields.io/badge/C%2B%2B%E5%9F%BA%E7%A1%80-Done-00599C?style=for-the-badge&logo=c)
 ![C++STL](https://img.shields.io/badge/C%2B%2B_STL-Done-00599C?style=for-the-badge&logo=c)
 ![C++数据结构](https://img.shields.io/badge/C%2B%2B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Done-00599C?style=for-the-badge&logo=c)
-![JavaSE](https://img.shields.io/badge/JavaSE-Learning-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaSE](https://img.shields.io/badge/JavaSE-Done-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 </div>
 
@@ -31,7 +31,7 @@
 |  2   | **C++ 基础语法**       | ✅ 已完成 | ██████████ 100% |
 |  3   | **C++ STL**            | ✅ 已完成 | ██████████ 100% |
 |  4   | **C++ 数据结构**       | ✅ 已完成 | ██████████ 100% |
-|  5   | **JavaSE 基础语法**    | 🔄 刚起步 | ██░░░░░░░░ 20%  |
+|  5   | **JavaSE 基础语法**    | ✅ 已完成 | ██████████ 100% |
 |  6   | **Java 数据结构**      | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
 |  7   | **Java 数据结构进阶**  | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
 |  8   | **MySQL 数据库基础**   | ⬜ 待开始 |  ░░░░░░░░░░ 0%  |
@@ -50,7 +50,7 @@
  ✅ C++ STL
  ✅ C++ 数据结构
 
-🔄 JavaSE 基础语法（当前）
+✅ JavaSE 基础语法
  │
 ⬜ Java 数据结构
  │  ├── Java 数据结构进阶
@@ -114,11 +114,14 @@
 - **迭代器**、函数对象与 Lambda
 - C++ 数据结构实现（链表、栈、队列、二叉树、堆、图）
 
-### 🔴 当前阶段 · JavaSE 基础语法
+### 🔵 已完成 · JavaSE 基础语法
 
 - 基础语法、变量、数据类型
 - 面向对象（类与对象、继承、多态）
 - 流程控制、方法与递归
+- 异常处理、集合框架、IO 流
+- 多线程基础、泛型、反射
+- 网络编程、Lambda 表达式
 
 ### ⬜ 待学 · MySQL 数据库
 
@@ -190,7 +193,7 @@ JavaEE 初阶 → JavaEE 进阶
 - [x] 掌握 C++ 面向对象编程思想
 - [x] 熟练使用 C++ STL
 - [x] 用 C++ 实现常见数据结构与算法
-- [ ] 掌握 JavaSE 基础语法（进行中）
+- [x] 掌握 JavaSE 基础语法
 - [ ] 完成 Java 数据结构学习
 - [ ] 完成 MySQL 数据库基础 + 进阶
 - [ ] 完成算法 + 笔试强训48天
@@ -228,7 +231,7 @@ JavaEE 初阶 → JavaEE 进阶
 | 2025 上半年 | C 语言系统学习                 | ✅ 已完成 |
 | 2025 上半年 | C++ 基础 + STL                 | ✅ 已完成 |
 | 2025 下半年 | C++ 数据结构                   | ✅ 已完成 |
-|   2026 Q1   | JavaSE 基础语法                | 🔄 进行中 |
+|   2026 Q1   | JavaSE 基础语法                | ✅ 已完成 |
 |   2026 Q2   | Java 数据结构                  | 📅 计划中 |
 |   2026 Q2   | MySQL 数据库基础 + 进阶        | 📅 计划中 |
 |   2026 Q3   | 算法 + 笔试强训48天            | 📅 计划中 |
@@ -257,7 +260,7 @@ JavaEE 初阶 → JavaEE 进阶
 <img src="https://img.shields.io/badge/Languages-4-blue?style=flat-square" />
 <img src="https://img.shields.io/badge/C-Done-A8B9CC?style=flat-square" />
 <img src="https://img.shields.io/badge/C%2B%2B-Done-00599C?style=flat-square" />
-<img src="https://img.shields.io/badge/Java-Learning-ED8B00?style=flat-square" />
+<img src="https://img.shields.io/badge/Java-Done-ED8B00?style=flat-square" />
 <img src="https://img.shields.io/badge/MySQL-Learning-00758F?style=flat-square" />
 <img src="https://img.shields.io/badge/Projects-Todo-green?style=flat-square" />
 
