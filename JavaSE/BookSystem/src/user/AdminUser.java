@@ -1,12 +1,19 @@
 package user;
 
+import book.Library;
+import utils.LibrarySingleton;
+import utils.ScannerSingleton;
+
 import java.util.Scanner;
 
 public class AdminUser extends User {
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = null;
+    private Library library = null;
 
     public AdminUser(String name, int UserID) {
         super(name, UserID, "图书管理员");
+        library = LibrarySingleton.getInstance();
+        sc = ScannerSingleton.getInstance();
     }
 
     @Override
@@ -28,8 +35,10 @@ public class AdminUser extends User {
         return sc.nextInt();
     }
 
+    // 做准备工作的 真正的实现我们放在 Library 类里面
     //上架图书
     public void addBook() {
+
     }
 
     //图书修改 ⽀持修改书名 作者 类别

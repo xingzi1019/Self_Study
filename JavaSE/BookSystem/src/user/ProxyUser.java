@@ -2,17 +2,18 @@ package user;
 
 import book.Library;
 import constant.Constant;
+import utils.LibrarySingleton;
 import utils.PermissionException;
 
 import javax.naming.NoPermissionException;
 
 public class ProxyUser {
     private User realuser;
-    private Library library;
+    private Library library = null;
 
     public ProxyUser(User user) {
         this.realuser = user;
-        library = Library.getLibrary();
+        library = LibrarySingleton.getInstance();
     }
 
     public int display() {

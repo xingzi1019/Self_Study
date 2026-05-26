@@ -9,6 +9,10 @@ public class Constant {
     public static final String ALL_BOOK_FILE_NAME = "AllBooks.txt";
     // 定义默认书架的容量
     public static final int CAPACITY = 5;
+    // 最多借阅的图书数量
+    public static final int BORROW_BOOK_MAX_NUM = 5;
+    // 定义存储借阅信息的文件名
+    public static final String BORROWED_BOOK_FILE_NAME = "BorrowedBook.txt";
     //-------------------管理员相关操作管理----------------
     //查找图书
     public static final int SEARCH_BOOK = 1;

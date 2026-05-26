@@ -80,7 +80,7 @@ public class Library {
         loadAllBook();
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
-            if(book.getTitle().equals(desTitle)) {
+            if (book.getTitle().equals(desTitle)) {
                 return book;
             }
         }
@@ -88,9 +88,9 @@ public class Library {
     }
 
     public void displayBooks() {
-        System.out.println("展示星炬已有的图书");
+        System.out.println("展示星炬图书馆已有的图书");
         loadAllBook();
-        for (int i =0;i < bookCount;i++)
+        for (int i = 0; i < bookCount; i++)
             System.out.println(books[i]);
     }
 
@@ -98,9 +98,15 @@ public class Library {
         System.out.println("退出图书系统");
         System.exit(0); // 算新学的
     }
-    // 公用的方法
-    public void addBook() {
 
+    //
+    public void addBook(Book book) {
+        System.out.println("Library 的 addBook 方法执行了");
+        if (bookCount > books.length) {
+            System.out.println("星炬图书馆满了 无法添加图书了");
+            // 不然就考虑扩容  扩容就不用 return 了 TODO 扩容
+            return;
+        }
     }
 }
 // 实例化 Library --> 加载文件当中的内容 --> 对文件进行操作(上架 更新)

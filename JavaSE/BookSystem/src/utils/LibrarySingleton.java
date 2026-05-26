@@ -6,7 +6,7 @@ import book.Library;
 public class LibrarySingleton {
     private static Library library;
     private LibrarySingleton() {
-        // 防止被搞出
+        // 防止被搞出第二个对象来
     }
     public static Library getInstance() {
         if (library == null) {
