@@ -7,6 +7,7 @@ import user.User;
 import java.util.Scanner;
 
 // 图书管理系统 将前面所学的知识点都串起来 是巩固复习也是总结
+// 先听会 再写会 再讲会
 public class LibrarySystem {
     public static void main() {
         // 工厂模式

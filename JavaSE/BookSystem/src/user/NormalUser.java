@@ -1,5 +1,6 @@
 package user;
 
+import book.Book;
 import book.Library;
 import book.PairOfUidAndBookId;
 import constant.Constant;
@@ -70,7 +71,17 @@ public class NormalUser extends User {
 
     //借阅图书
     public void borrowBook() {
-
+        sc.nextLine(); // 吸收回车
+        if (library.bookCount == 0) {
+            System.out.println("星炬学院图书馆没有书籍可以借阅");
+            return;
+        } else {
+            System.out.println("请输入你要借阅的图书的ID");
+            int desBookID = sc.nextInt();
+            sc.nextLine(); // 再吸收回车
+            loadBorrowedBook();
+            // ....一大部分等待被实现
+        }
     }
 
     //归还图书
