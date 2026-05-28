@@ -53,8 +53,8 @@ public class LibrarySystem {
                 currentUser = proxyUserNormal2;
                 break;
             case 4:
-                System.exit(0); // 正常的系统退出 还没接触到 算学一下
                 System.out.println("系统已退出..");
+                System.exit(0); // 正常的系统退出 还没接触到 算学一下
                 break;
             default:
                 break;

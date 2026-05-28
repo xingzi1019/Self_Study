@@ -2,8 +2,10 @@ package book;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
+
 // 就是一本书 同时提供将书籍信息转换成字符串的 toJSON 方法
-public class Book {
+public class Book implements Comparable<Book> {
     private int bookID;
     private String title;
     private String author;
@@ -126,5 +128,10 @@ public class Book {
         json.append(borrowCount).append(",");
         json.append(shelfDate != null ? shelfDate.format(DateTimeFormatter.ISO_LOCAL_DATE) : "null");
         return json.toString();
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return o.getBorrowCount() - this.getBorrowCount();
     }
 }

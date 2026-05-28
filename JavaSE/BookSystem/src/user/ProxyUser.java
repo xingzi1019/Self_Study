@@ -5,8 +5,6 @@ import constant.Constant;
 import utils.LibrarySingleton;
 import utils.PermissionException;
 
-import javax.naming.NoPermissionException;
-
 public class ProxyUser {
     private User realuser;
     private Library library = null;
@@ -131,7 +129,8 @@ public class ProxyUser {
     }
 
     public void exit() {
-
+        System.out.println("退出系统");
+        System.exit(0); // 记住就好了 这块就不需要交给library类了
     }
 
     //============ 普通用户的方法 =========
@@ -144,21 +143,21 @@ public class ProxyUser {
     //借阅图书
     public void borrowBook() {
         System.out.println("Proxy 的 borrowBook 方法执行了");
-        checkRealUserWhetherAdminUser("管理员不能借阅图书,换成普通学生");
+        checkRealUserWhetherNormalUser("管理员不能借阅图书,换成普通学生");
         ((NormalUser) this.realuser).borrowBook();
     }
 
     //归还图书
     public void returnBook() {
         System.out.println("Proxy 的 returnBook 方法执行了");
-        checkRealUserWhetherAdminUser("管理员不能归还图书,换成普通学生");
+        checkRealUserWhetherNormalUser("管理员不能归还图书,换成普通学生");
         ((NormalUser) this.realuser).returnBook();
     }
 
     // 查看个⼈借阅情况
     public void viewBorrowHistory() {
         System.out.println("Proxy 的 viewBorrowHistory 方法执行了");
-        checkRealUserWhetherAdminUser("管理员不能归还图书,换成普通学生");
+        checkRealUserWhetherNormalUser("管理员不能归还图书,换成普通学生");
         ((NormalUser) this.realuser).viewBorrowHistory();
     }
 

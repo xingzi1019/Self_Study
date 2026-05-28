@@ -76,7 +76,7 @@ public class AnalyingBook {
     }
 
     // 测试 后面注释掉
-    public static void main() {
+    /*public static void main() {
         Book[] books = new Book[5];
         books[1] = new Book("《提瓦特历史》", "派蒙", "历史",
                 2099, LocalDate.of(2009, 9, 23));
@@ -96,5 +96,5 @@ public class AnalyingBook {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 }
