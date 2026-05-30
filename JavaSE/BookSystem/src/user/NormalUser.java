@@ -55,7 +55,9 @@ public class NormalUser extends User {
     private void storeBorrowedBook() {
         try {
             analyzingBorrowedBook.storeObject(pairOfUidAndBookIds, Constant.BORROWED_BOOK_FILE_NAME);
-        } catch (Exception e) { // IOException 会报错 为什么呢
+        } catch (Exception e) {
+            // storeObject 内部未声明 throws IOException（FileUtils 已在内部处理异常），
+            // 故此处只能捕获 Exception 而非 IOException
             throw new RuntimeException(e);
         }
     }

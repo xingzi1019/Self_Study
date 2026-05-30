@@ -165,6 +165,7 @@ public class ProxyUser {
                     checkAndRemoveOldBooks();
                     break;
                 default:
+                    System.out.println("无效的操作选择，请重新输入(1-12)");
                     break;
             }
         } else {
@@ -186,6 +187,9 @@ public class ProxyUser {
                     break;
                 case Constant.VIEW_BORROW_HISTORY_BOOK:
                     viewBorrowHistory();
+                    break;
+                default:
+                    System.out.println("无效的操作选择，请重新输入(1-6)");
                     break;
             }
         }

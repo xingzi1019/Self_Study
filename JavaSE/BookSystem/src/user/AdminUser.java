@@ -146,6 +146,4 @@ public class AdminUser extends User {
         library.checkAndRemoveOldBooks();
     }
 
-    public void exit() {
-    }
 }

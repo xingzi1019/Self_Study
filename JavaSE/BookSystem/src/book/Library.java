@@ -111,29 +111,11 @@ public class Library {
 
     //
     public void addBook(Book book) {
-        /*System.out.println("Library 的 addBook 方法执行了");
-        if (bookCount > books.length) {
-            System.out.println("星炬图书馆满了 无法添加图书了");
-            // 不然就考虑扩容  扩容就不用 return 了 TODO 扩容
-            return;
-        }*/
-        /* // 课件版本
-        if (bookCount >= books.length) {
-            System.out.println("图书馆已满，⽆法上架更多图书！");
-            return;
-        }
-        //修改bookId为自增
-        book.setBookID(bookCount + 1);
-        books[bookCount++] = book;
-        //此时存储数据的时候 会把书籍对象全部存储，虽然部分属性没有输⼊赋值
-        storeBook();
-        System.out.println("图书 " + book.getTitle() + "上架成功！");*/
-        // ID 不重复版本
         System.out.println("Libary类addBook方法执行了");
+        // 动态扩容：当图书馆满时自动扩容为原来的2倍
         if (bookCount >= books.length) {
-            System.out.println("图书馆已满，无法上架图书");
-            //扩容的 TODO 如果扩容了 下面就不要进行return了
-            return;
+            books = Arrays.copyOf(books, books.length * 2);
+            System.out.println("图书馆已自动扩容，当前容量：" + books.length);
         }
         books[bookCount] = book;
         if (bookCount == 0) {
@@ -158,9 +140,12 @@ public class Library {
                 }
                 book.setBorrowed(true);
                 book.increaseBorrowCount();
+                storeBook();
+                System.out.println("借阅成功！书名：《" + book.getTitle() + "》");
+                return;
             }
         }
-        storeBook();
+        System.out.println("没有找到ID为 " + desBookID + " 的图书");
     }
 
     public Book searchById(int bookId) {
@@ -287,25 +272,88 @@ public class Library {
         storeBook();
     }
 
-    // 下面这两个就不写了 好像在菜单里面忘记添加这两个的选择了
+    // 按类别统计图书
     public void categorizeBooksByCategory() {
-
+        loadAllBook();
+        if (bookCount == 0) {
+            System.out.println("星炬图书馆暂时没有图书");
+            return;
+        }
+        // 用两个并行数组记录类别和对应数量
+        String[] categories = new String[bookCount];
+        int[] counts = new int[bookCount];
+        int categoryCount = 0;
+        for (int i = 0; i < bookCount; i++) {
+            Book book = books[i];
+            if (book == null) continue;
+            String category = book.getCategory();
+            boolean found = false;
+            for (int j = 0; j < categoryCount; j++) {
+                if (categories[j].equals(category)) {
+                    counts[j]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                categories[categoryCount] = category;
+                counts[categoryCount] = 1;
+                categoryCount++;
+            }
+        }
+        System.out.println("====== 按类别统计图书 ======");
+        for (int i = 0; i < categoryCount; i++) {
+            System.out.println("类别：「" + categories[i] + "」  数量：" + counts[i] + " 本");
+        }
     }
 
+    // 按作者统计图书
     public void categorizeBooksByAuthor() {
-
+        loadAllBook();
+        if (bookCount == 0) {
+            System.out.println("星炬图书馆暂时没有图书");
+            return;
+        }
+        String[] authors = new String[bookCount];
+        int[] counts = new int[bookCount];
+        int authorCount = 0;
+        for (int i = 0; i < bookCount; i++) {
+            Book book = books[i];
+            if (book == null) continue;
+            String author = book.getAuthor();
+            boolean found = false;
+            for (int j = 0; j < authorCount; j++) {
+                if (authors[j].equals(author)) {
+                    counts[j]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                authors[authorCount] = author;
+                counts[authorCount] = 1;
+                authorCount++;
+            }
+        }
+        System.out.println("====== 按作者统计图书 ======");
+        for (int i = 0; i < authorCount; i++) {
+            System.out.println("作者：「" + authors[i] + "」  作品数：" + counts[i] + " 本");
+        }
     }
 
     public void returnBook(int bookId) {
         loadAllBook();
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
-            if(book.getBookID()==bookId) {
+            if (book.getBookID() == bookId) {
                 book.setBorrowed(false);
                 book.decreaseBorrowCount();
+                storeBook();
+                System.out.println("归还成功！书名：《" + book.getTitle() + "》");
+                return;
             }
         }
-        storeBook();
+        System.out.println("没有找到ID为 " + bookId + " 的图书");
     }
 }
 // 实例化 Library --> 加载文件当中的内容 --> 对文件进行操作(上架 更新)
