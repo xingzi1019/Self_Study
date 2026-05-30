@@ -99,7 +99,9 @@ public class Book implements Comparable<Book> {
     }
 
     public void decreaseBorrowCount() {
-        this.borrowCount--;
+        if (this.borrowCount > 0) {
+            this.borrowCount--;
+        }
     }
 
     @Override
@@ -132,6 +134,6 @@ public class Book implements Comparable<Book> {
 
     @Override
     public int compareTo(Book o) {
-        return o.getBorrowCount() - this.getBorrowCount();
+        return Integer.compare(o.getBorrowCount(), this.getBorrowCount());
     }
 }

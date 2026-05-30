@@ -32,8 +32,12 @@ public class Constant {
     public static final int GENERATE_BOOK = 8;
     //查看库存状态
     public static final int CHECK_INVENTORY_STATUS = 9;
+    //按类别统计图书
+    public static final int CATEGORIZE_BY_CATEGORY = 10;
+    //按作者统计图书
+    public static final int CATEGORIZE_BY_AUTHOR = 11;
     //移除上架超过1年的书籍
-    public static final int CHECK_AND_REMOVE_OLD_BOOK = 10;
+    public static final int CHECK_AND_REMOVE_OLD_BOOK = 12;
     //-------------------普通用户相关操作管理----------------
     //借阅图书
     public static final int BORROWED_BOOK = 4;

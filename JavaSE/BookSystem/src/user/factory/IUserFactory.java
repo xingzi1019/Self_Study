@@ -11,6 +11,6 @@ public interface IUserFactory {
      * @param UserID .
      * @return 返回一个User类型的类
      */
-    User creatUser(String name, int UserID);
+    User createUser(String name, int UserID);
     // 为什么无论几个参数上面这个方法它都不会报错
 }

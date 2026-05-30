@@ -87,6 +87,11 @@ public class NormalUser extends User {
         Book book = library.searchById(desBookID);
         if (book == null) {
             System.out.println("没有该id的相关书籍:" + desBookID);
+            return;
+        }
+        if (borrowedCount >= pairOfUidAndBookIds.length) {
+            System.out.println("借阅数量已达上限，无法继续借阅");
+            return;
         }
         for (int i = 0; i < borrowedCount; i++) {
             PairOfUidAndBookId pairOfUidAndBookId = pairOfUidAndBookIds[i];

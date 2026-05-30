@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 // 这里我们用到了文件操作 在刚刚的 jar 包里面文件操作 相当于是封装在了 jar 包里面了
 // 其实是和 C语言 那里是差不多的 但是涉及到了挺多流相关的操作 所以我们就放到 JavaEE 里面再学习
-public class AnalyingBook {
+public class AnalyzingBook {
     public void storeObject(Book[] books, String filename) throws IOException {
         // books数组里面真正存了多少本书
         int booksUseLen = 0;
@@ -57,22 +57,17 @@ public class AnalyingBook {
     private Book parseBookJson(String json) {
         String[] parts = json.split(",");
         Book book = new Book();
+        book.setBookID(Integer.parseInt(parts[0]));
         book.setTitle(parts[1]);
         book.setAuthor(parts[2]);
         book.setCategory(parts[3]);
         book.setPublishYear(Integer.parseInt(parts[4]));
-        book.setShelfDate(LocalDate.parse(parts[7]));
-        // 因为当初没传参
-        if (book.getTitle() != null
-                && book.getAuthor() != null
-                && book.getCategory() != null
-                && book.getShelfDate() != null) {
-            book.setBookID(Integer.parseInt(parts[0]));       // 尚不明确
-            book.setBorrowed(Boolean.parseBoolean(parts[5])); // false
-            book.setBorrowCount(Integer.parseInt(parts[6]));  // 0
-            return book;
+        book.setBorrowed(Boolean.parseBoolean(parts[5]));
+        book.setBorrowCount(Integer.parseInt(parts[6]));
+        if (!"null".equals(parts[7])) {
+            book.setShelfDate(LocalDate.parse(parts[7]));
         }
-        return null;
+        return book;
     }
 
     // 测试 后面注释掉

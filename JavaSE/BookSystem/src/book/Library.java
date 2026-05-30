@@ -1,7 +1,7 @@
 package book;
 
 import constant.Constant;
-import utils.AnalyingBook;
+import utils.AnalyzingBook;
 import utils.ScannerSingleton;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class Library {
     public int bookCount;   // 记录当前图书馆有效的书籍个数
     private static Library library;
     public Scanner scanner;
-    private AnalyingBook analyingBook = new AnalyingBook();
+    private AnalyzingBook analyzingBook = new AnalyzingBook();
 
     public Library() {
         // 读
@@ -44,7 +44,7 @@ public class Library {
     private void loadAllBook() {
         try {
             // 读取文件的书籍到 allBook 数组当中去
-            Book[] allBook = analyingBook.loadObject(Constant.ALL_BOOK_FILE_NAME);
+            Book[] allBook = analyzingBook.loadObject(Constant.ALL_BOOK_FILE_NAME);
             books = new Book[Constant.CAPACITY];
             if (allBook == null) {
                 bookCount = 0;
@@ -59,15 +59,15 @@ public class Library {
                 bookCount = allBookLen;
             }
         } catch (IOException e) {
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         }
     }
 
     private void storeBook() {
         try {
-            analyingBook.storeObject(books, Constant.ALL_BOOK_FILE_NAME);
+            analyzingBook.storeObject(books, Constant.ALL_BOOK_FILE_NAME);
         } catch (IOException e) {
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         }
     }
 
@@ -152,6 +152,10 @@ public class Library {
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
             if (book.getBookID() == desBookID) {
+                if (book.isBorrowed()) {
+                    System.out.println("该书已被借出，无法重复借阅");
+                    return;
+                }
                 book.setBorrowed(true);
                 book.increaseBorrowCount();
             }
@@ -194,6 +198,7 @@ public class Library {
     }
 
     public void removeBook(int id) {
+        loadAllBook();
         int index = searchByIdReturnIndex(id);
         if (-1 == index) {
             System.out.println("没有你要删除的书籍");
@@ -256,6 +261,7 @@ public class Library {
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
         boolean flg = false;
+        scanner.nextLine(); // 吸收 nextInt 残留的换行符
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
             //获取当前书籍的上架时间
@@ -264,7 +270,6 @@ public class Library {
             long yearsBetween = ChronoUnit.YEARS.between(specifiedDate, currentDate);
             if (yearsBetween >= 1) {
                 System.out.print("图书 " + book.getTitle() + " 已经上架超过一年，是否移除？ (y/n)：");
-                scanner.nextLine();
                 String response = scanner.nextLine();
                 //scanner.nextLine();
                 if (response.equalsIgnoreCase("y")) {

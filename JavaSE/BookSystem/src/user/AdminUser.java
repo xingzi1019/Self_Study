@@ -94,12 +94,14 @@ public class AdminUser extends User {
     //删除书籍
     public void removeBook() {
         sc.nextLine();
+        library.displayBooks();
         System.out.println("请输入你要删除的书籍的id:");
         int id = sc.nextInt();
         sc.nextLine();
         Book book = library.searchById(id);
         if (book == null) {
             System.out.println("没有你要删除的书籍");
+            return;
         }
         library.removeBook(id);
         System.out.println("下架图书成功");

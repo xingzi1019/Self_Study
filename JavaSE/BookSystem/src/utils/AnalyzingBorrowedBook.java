@@ -9,7 +9,7 @@ import java.io.IOException;
 //
 public class AnalyzingBorrowedBook {
     public PairOfUidAndBookId[] loadObject(String filename) throws IOException {
-        String content = FileUtils.readFile(Constant.BORROWED_BOOK_FILE_NAME);
+        String content = FileUtils.readFile(filename);
         if (content == null || content.isEmpty()) { // String 里面是有判空的
             System.out.println("已借阅书籍列表⽆数据，表⽰没有用户借阅过书籍");
             return null;
@@ -44,6 +44,6 @@ public class AnalyzingBorrowedBook {
                 }
             }
         }
-        FileUtils.writeFile(jsonArray.toString(), Constant.BORROWED_BOOK_FILE_NAME);
+        FileUtils.writeFile(jsonArray.toString(), filename);
     }
 }
