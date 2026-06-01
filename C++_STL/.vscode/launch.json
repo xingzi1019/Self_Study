@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Note_Code (x64 Debug)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "preLaunchTask": "build (msbuild x64 Debug)",
+      "program": "${workspaceFolder}\\x64\\Debug\\Note_Code.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "console": "externalTerminal"
+    }
+  ]
+}
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/VS_C_Code/C++_Code/My_C-_Code/Note_Code",
+      "program": "d:/VS_C_Code/C++_Code/My_C-_Code/Note_Code/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
