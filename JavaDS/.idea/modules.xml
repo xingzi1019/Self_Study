@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" filepath="$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDS.iml" filepath="$PROJECT_DIR$/JavaDS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/List/List.iml" filepath="$PROJECT_DIR$/List/List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" filepath="$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" />
+    </modules>
+  </component>
+</project>
