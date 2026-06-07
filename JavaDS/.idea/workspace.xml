@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="DS构建">
-      <change afterPath="$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CollectionFramework/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_AlgorithmProblems/STL_AP/.vs/STL_AP/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_STL/.vs/Note_Code/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_STL/.vs/Note_Code/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++_STL/.vs/Note_Code/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../C++_STL/.vs/Note_Code/v17/Browse.VC.db" afterDir="false" />
+    <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AaaHomework/src/demo1/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AaaHomework/src/demo1/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AaaHomework/src/demo1/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AaaHomework/src/demo2/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CollectionFramework/src/Space.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo1/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZzzTemp/src/SEkaoshi/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZzzTemp/src/SEkaoshi/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZzzTemp/src/demo1/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CollectionFramework/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionFramework/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo/Test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="3EfhFnDAs6tlfdlwDS53YGdONdH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,16 +48,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Test.executor": "Run",
+    "Application.Test.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/My_Code/my-own-study/JavaDS",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="List" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="List" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,5 +102,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DS构建" />
     <option name="LAST_COMMIT_MESSAGE" value="DS构建" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo1/Test.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

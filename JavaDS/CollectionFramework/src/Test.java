@@ -1,6 +1,7 @@
 // 画图 书写(敲代码) 思考
 // 一直循环
 // 多画图多调式多思考
+
 import java.awt.*;
 import java.util.Stack;
 
@@ -16,7 +17,15 @@ import java.util.Stack;
 // HashMap        哈希表
 // TreeMap        红黑树
 public class Test {
+    public static int fibonacci(int N) {
+        return N < 2 ? N : fibonacci(N - 1) + fibonacci(N - 2);
+    } // 时间复杂度 2^n
+
     public static void main(String[] args) {
+        fibonacci(6);
+    }
+
+    public static void main1(String[] args) {
         List list = new List();
         Stack stack = new Stack();
     }
