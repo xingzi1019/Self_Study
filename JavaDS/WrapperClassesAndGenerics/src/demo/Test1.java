@@ -1,5 +1,5 @@
 package demo;
-
+// 该项目其实是数据结构学习的准备工作
 public class Test1 {
     public static void main(String[] args) {
         main1(args);

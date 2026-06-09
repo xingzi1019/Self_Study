@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo1/MyArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo2/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo3/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo4/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo4/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AI/Counter/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ListOfArrayList/src/demo1/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo4/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo1/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo4/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/WrapperClassesAndGenerics/src/demo4/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +44,12 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Test.executor": "Run",
+    "Application.TestDemo.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
