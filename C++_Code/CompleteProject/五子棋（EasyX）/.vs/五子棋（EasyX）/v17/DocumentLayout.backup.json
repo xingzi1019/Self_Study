@@ -1,0 +1,65 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10204172-2C5C-4AED-B434-960C317D4DA5}|\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.vcxproj|D:\\C\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10204172-2C5C-4AED-B434-960C317D4DA5}|\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.vcxproj|solutionrelative:\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 11,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp",
+              "DocumentMoniker": "D:\\C\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp",
+              "RelativeDocumentMoniker": "\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp",
+              "ToolTip": "D:\\C\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09\\\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp",
+              "RelativeToolTip": "\u4E94\u5B50\u68CB\uFF08EasyX\uFF09.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-08T04:36:07.824Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

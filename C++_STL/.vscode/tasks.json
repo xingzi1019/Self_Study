@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build (msbuild x64 Debug)",
+      "type": "shell",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "Note_Code.vcxproj",
+        "/t:Build",
+        "/p:Configuration=Debug",
+        "/p:Platform=x64",
+        "/m"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "clean (msbuild x64 Debug)",
+      "type": "shell",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "Note_Code.vcxproj",
+        "/t:Clean",
+        "/p:Configuration=Debug",
+        "/p:Platform=x64",
+        "/m"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

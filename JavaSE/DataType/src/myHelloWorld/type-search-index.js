@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"HelloWorld"},{"l":"所有类和接口","u":"allclasses-index.html","k":"18"}];updateSearchResults();

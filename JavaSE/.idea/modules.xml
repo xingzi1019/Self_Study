@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AbstractClassInterface/AbstractClassInterface.iml" filepath="$PROJECT_DIR$/AbstractClassInterface/AbstractClassInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BookSystem/BookSystem.iml" filepath="$PROJECT_DIR$/BookSystem/BookSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassObject1/ClassObject.iml" filepath="$PROJECT_DIR$/ClassObject1/ClassObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassObject2/ClassObject2.iml" filepath="$PROJECT_DIR$/ClassObject2/ClassObject2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommonUtilityClasses/CommonUtilityClasses.iml" filepath="$PROJECT_DIR$/CommonUtilityClasses/CommonUtilityClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Debugging/Debugging.iml" filepath="$PROJECT_DIR$/Debugging/Debugging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exception/Exception.iml" filepath="$PROJECT_DIR$/Exception/Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AaaHomeWork/HomeWork.iml" filepath="$PROJECT_DIR$/AaaHomeWork/HomeWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaSE.iml" filepath="$PROJECT_DIR$/.idea/JavaSE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogicControl/LuoJiKongZhi.iml" filepath="$PROJECT_DIR$/LogicControl/LuoJiKongZhi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Method/Method.iml" filepath="$PROJECT_DIR$/Method/Method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operator/Operator.iml" filepath="$PROJECT_DIR$/Operator/Operator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Polymorphism/Polymorphism.iml" filepath="$PROJECT_DIR$/Polymorphism/Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataType/ShuJuLeiXing.iml" filepath="$PROJECT_DIR$/DataType/ShuJuLeiXing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InputAndOutput/ShuRuShuChu.iml" filepath="$PROJECT_DIR$/InputAndOutput/ShuRuShuChu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZzzTemp/Temp.iml" filepath="$PROJECT_DIR$/ZzzTemp/Temp.iml" />
+    </modules>
+  </component>
+</project>

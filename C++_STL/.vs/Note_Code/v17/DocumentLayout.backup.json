@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_set.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|solutionrelative:STL_set.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\set\u548Cmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|solutionrelative:set\u548Cmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|solutionrelative:STL_map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F34A56D-7802-4CDD-A31E-39BDD9FD5D78}|Note_Code.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.h",
+              "DocumentMoniker": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\main.h",
+              "RelativeDocumentMoniker": "main.h",
+              "ToolTip": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\main.h",
+              "RelativeToolTip": "main.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-13T15:13:59.848Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "STL_set.cpp",
+              "DocumentMoniker": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_set.cpp",
+              "RelativeDocumentMoniker": "STL_set.cpp",
+              "ToolTip": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_set.cpp",
+              "RelativeToolTip": "STL_set.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-30T09:28:52.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "set\u548Cmap.cpp",
+              "DocumentMoniker": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\set\u548Cmap.cpp",
+              "RelativeDocumentMoniker": "set\u548Cmap.cpp",
+              "ToolTip": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\set\u548Cmap.cpp",
+              "RelativeToolTip": "set\u548Cmap.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-30T09:17:40.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "STL_map.cpp",
+              "DocumentMoniker": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_map.cpp",
+              "RelativeDocumentMoniker": "STL_map.cpp",
+              "ToolTip": "D:\\VS_C_Code\\C\u002B\u002B_Code\\My_C-_Code\\Note_Code\\STL_map.cpp",
+              "RelativeToolTip": "STL_map.cpp",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAACYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-27T13:15:00.96Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

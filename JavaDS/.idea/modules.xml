@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AaaHomework/AaaHomework.iml" filepath="$PROJECT_DIR$/AaaHomework/AaaHomework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" filepath="$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDS.iml" filepath="$PROJECT_DIR$/JavaDS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" filepath="$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" filepath="$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZzzTemp/ZzzTemp.iml" filepath="$PROJECT_DIR$/ZzzTemp/ZzzTemp.iml" />
+    </modules>
+  </component>
+</project>
