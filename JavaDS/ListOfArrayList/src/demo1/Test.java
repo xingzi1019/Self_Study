@@ -15,5 +15,14 @@ public class Test {
         System.out.println(ret1);
         boolean ret2 = myArrayList.contains(22);
         System.out.println(ret2);
+        System.out.println("======================");
+        try {
+            int i = myArrayList.get(4);
+            System.out.println(i);
+        } catch (EmptyListException e) {
+            e.printStackTrace();
+        } catch (PosIllegalityException e) {
+            e.printStackTrace();
+        }
     }
 }

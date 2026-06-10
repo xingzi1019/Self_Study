@@ -61,7 +61,21 @@ public class MyArrayList implements IList {
 
     @Override
     public int get(int pos) {
+        if(isEmpty()) {
+            throw new EmptyListException("当前顺序表为空");
+        }
+        checkPos(pos,"pos位置不合法");
         return this.elem[pos];
+    }
+
+    private void checkPos(int pos,String msg) {
+        if (pos >= usedSize || pos < 0) {
+            throw new PosIllegalityException(msg);
+        }
+    }
+
+    public boolean isEmpty() {
+        return usedSize == 0;
     }
 
     @Override
@@ -85,8 +99,8 @@ public class MyArrayList implements IList {
     public void remove(int toRemove) {
         if (contains(toRemove)) {
             int index = indexOf(toRemove);
-            for (int i = usedSize -1 ; i > index ; i++) {
-                this.elem[i-1] = this.elem[i];
+            for (int i = usedSize - 1; i > index; i++) {
+                this.elem[i - 1] = this.elem[i];
             }
         }
     }
@@ -107,7 +121,7 @@ public class MyArrayList implements IList {
     @Override
     public void display() {
         for (int i = 0; i < usedSize; i++) {
-            System.out.print(this.elem[i]+" ");
+            System.out.print(this.elem[i] + " ");
         }
         System.out.println();
     }
