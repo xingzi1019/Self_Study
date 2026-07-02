@@ -1,6 +1,7 @@
 package demo;
 // 有学过C++的数据结构 Java的上手应该也会很快
 // 而且刚复习了一遍 应该也可以再整理一下
+
 import java.util.LinkedList;
 
 public class Test {
@@ -13,8 +14,28 @@ public class Test {
     // 循环或者不循环
     public static void main(String[] args) {
         MySingleList mySingleList = new MySingleList();
+        mySingleList.addFirst(12);
+        mySingleList.addFirst(23);
+        mySingleList.addFirst(34);
+        mySingleList.addFirst(45);
+        mySingleList.addFirst(56);
+        mySingleList.display();
+    }
+
+    public static void main2(String[] args) {
+        MySingleList mySingleList = new MySingleList();
         mySingleList.createList();
         System.out.println("仅仅为了打个断点");
+        mySingleList.display();
+        System.out.print("size:");
+        System.out.println(mySingleList.size());
+        System.out.println("测试是否包含该元素");
+        System.out.println(mySingleList.contains(12));
+        System.out.println(mySingleList.contains(23));
+        System.out.println(mySingleList.contains(33));
+        System.out.print("头插入法:");
+        mySingleList.addFirst(99);
+        mySingleList.display();
     }
 
     public static void main1(String[] args) {
