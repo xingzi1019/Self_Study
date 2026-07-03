@@ -14,12 +14,43 @@ public class Test {
     // 循环或者不循环
     public static void main(String[] args) {
         MySingleList mySingleList = new MySingleList();
-        mySingleList.addFirst(12);
+        mySingleList.addFirst(99);
+        mySingleList.display();
+        mySingleList.remove(99);
+        System.out.println("头删:");
+        mySingleList.display();
+        System.out.println("---");
+        mySingleList.addLast(99);
+        mySingleList.addLast(66);
+        mySingleList.addLast(99);
+        mySingleList.addLast(66);
+        mySingleList.addLast(99);
+        mySingleList.addLast(66);
+        mySingleList.addLast(99);
+        mySingleList.addLast(99);
+        System.out.print("删除前: ");
+        mySingleList.display();
+        mySingleList.clear();
+        System.out.print("清理后: ");
+        mySingleList.display();
+//        mySingleList.removeAllKey(99);
+//        System.out.print("删除后: ");
+//        mySingleList.display();
+//        System.out.print("---");
+        /*mySingleList.addFirst(12);
         mySingleList.addFirst(23);
         mySingleList.addFirst(34);
         mySingleList.addFirst(45);
         mySingleList.addFirst(56);
+        mySingleList.addLast(99);
+        mySingleList.addFirst(99);
+        mySingleList.addFirst(99);
+        mySingleList.display();*/
+        /*System.out.println("测试删除操作: ");
+        mySingleList.remove(99);
         mySingleList.display();
+        mySingleList.removeAllKey(99);
+        mySingleList.display();*/
     }
 
     public static void main2(String[] args) {

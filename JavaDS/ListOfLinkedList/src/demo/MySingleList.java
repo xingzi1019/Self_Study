@@ -97,7 +97,7 @@ public class MySingleList implements ILinkedList {
     private ListNode findIndex(int index) {
         ListNode cur = head;
         int count = 0;
-        while(count != index-1) {
+        while (count != index - 1) {
             cur = cur.next;
             count++;
         }
@@ -129,16 +129,65 @@ public class MySingleList implements ILinkedList {
     // 删除第⼀次出现关键字为key的节点
     @Override
     public void remove(int key) {
-        ListNode cur = head;
-        while (head != null) {
-
+        if (head == null) {
+            System.out.println("链表为空 无法进行删除操作");
+            return;
+            // 也可以自定义异常
         }
+        // 如果是第一个结点的话（无论链表长度）
+        if (head.val == key) {
+            head = head.next;
+            return;
+        }
+        // 其他节点：找 key 的前驱
+        ListNode cur = search(key);
+        if (cur == null) {
+            // 可以用自定义异常
+            System.out.println("没有你要删除的数字: " + key);
+            return;
+        }
+        ListNode del = cur.next;
+        cur.next = del.next;
     }
 
-    // 删除所有值为key的节点
+    /**
+     * 找到 key 的前驱
+     *
+     * @param key
+     * @return
+     */
+    private ListNode search(int key) {
+        ListNode cur = head;
+        while (cur.next != null) {
+            if (cur.next.val == key) {
+                return cur;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
+
+    // 删除所有值为key的节点   (只是遍历一次链表就删除掉所有的 key )
     @Override
     public void removeAllKey(int key) {
-
+        // 先处理头节点：循环删除所有值为 key 的头节点
+        while (head != null && head.val == key) {
+            head = head.next;
+        }
+        // 如果链表已经空了，直接返回
+        if (head == null) {
+            return;
+        }
+        // 处理后续节点
+        ListNode cur = head;
+        while (cur.next != null) {
+            if (cur.next.val == key) {
+                cur.next = cur.next.next;
+                // 不移动 cur，继续检查新的 cur.next 是否也是 key
+            } else {
+                cur = cur.next;
+            }
+        }
     }
 
     // 得到单链表的⻓度
@@ -158,7 +207,14 @@ public class MySingleList implements ILinkedList {
     // 清理链表
     @Override
     public void clear() {
-        head.next = null;
+        // 下面这些单向链表可有可无
+        /*ListNode cur = head;
+        while (cur != null) {
+            ListNode curN = cur.next;
+            cur.next = null;
+            cur = curN;
+        }*/
+        this.head = null;
     }
 
     // 展示链表存储的数据
@@ -171,5 +227,4 @@ public class MySingleList implements ILinkedList {
         }
         System.out.println();
     }
-
 }
