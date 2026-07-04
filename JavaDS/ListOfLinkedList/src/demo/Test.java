@@ -2,9 +2,26 @@ package demo;
 // 有学过C++的数据结构 Java的上手应该也会很快
 // 而且刚复习了一遍 应该也可以再整理一下
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Test {
+    public static void main(String[] args) {
+        MySingleList mySingleList = new MySingleList();
+        mySingleList.addLast(12);
+        mySingleList.addLast(23);
+        mySingleList.addLast(34);
+        mySingleList.addLast(45);
+        mySingleList.display();
+        System.out.println("=====================");
+        // 静态内部类的相关知识回顾一下
+        MySingleList.ListNode ret = mySingleList.reverseList();
+        mySingleList.display();
+        mySingleList.display(ret);
+        System.out.println(mySingleList.kthToLast(4));
+        System.out.println(mySingleList.kthToLast(6));
+    }
+
     // 一句话来说
     // 链表是⼀种物理存储结构上⾮连续存储结构
     // 数据元素的逻辑顺序是通过链表中的引⽤链接次序实现的
@@ -12,7 +29,7 @@ public class Test {
     // 单向或者双向
     // 带头或者不带头
     // 循环或者不循环
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         MySingleList mySingleList = new MySingleList();
         mySingleList.addFirst(99);
         mySingleList.display();
