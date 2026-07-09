@@ -2,6 +2,7 @@ package demo;
 // 有学过C++的数据结构 Java的上手应该也会很快
 // 而且刚复习了一遍 应该也可以再整理一下
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
