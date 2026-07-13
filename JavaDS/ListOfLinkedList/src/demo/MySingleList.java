@@ -270,6 +270,26 @@ public class MySingleList implements ILinkedList {
             l2.next = mergeTwoLists(l1, l2.next);
             return l2;
         }
+        // 迭代实现
+        /*ListNode newH = new ListNode(-1);
+        ListNode temp = newH;
+        while(l1 != null && l2 != null) {
+            if(l1.val < l2.val) {
+                temp.next = l1;
+                temp = l1;
+                l1 = l1.next;
+            } else {
+                temp.next = l2;
+                temp = l2;
+                l2 = l2.next;
+            }
+        }
+        if(l1 != null) {
+            temp.next = l1;
+        } else if (l2 != null){
+            temp.next = l2;
+        }
+        return newH.next;*/
     }
 
     //  返回链表倒数第k个结点
