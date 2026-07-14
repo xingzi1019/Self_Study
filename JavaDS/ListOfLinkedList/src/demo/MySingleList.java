@@ -344,4 +344,38 @@ public class MySingleList implements ILinkedList {
         // }
         // return ret;
     }
+
+    // 判断字符串是否回文
+    public boolean chkPalindrome() {
+        if (head == null) {
+            return true;
+        }
+        // 判断这个链表是否回文 只遍历一次
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        // slow此时指向中间位置
+        ListNode cur = slow.next;
+        while (cur != null) {
+            ListNode curN = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curN;
+        }
+        // 此时A和 cur一直走直到相遇
+        while (head != slow) {
+            if (head.val != slow.val) {
+                return false;
+            }
+            if (head.next == slow) {
+                return true;
+            }
+            head = head.next;
+            slow = slow.next;
+        }
+        return true;
+    }
 }

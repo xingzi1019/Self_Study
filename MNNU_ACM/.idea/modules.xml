@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CharArray18/CharArray18.iml" filepath="$PROJECT_DIR$/CharArray18/CharArray18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Greed17/Greed17.iml" filepath="$PROJECT_DIR$/Greed17/Greed17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MNNU_ACM.iml" filepath="$PROJECT_DIR$/MNNU_ACM.iml" />
+    </modules>
+  </component>
+</project>
