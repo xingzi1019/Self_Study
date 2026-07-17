@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
         MySingleList mySingleList = new MySingleList();
         mySingleList.addLast(12);
         mySingleList.addLast(23);
