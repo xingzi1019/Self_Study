@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/StacksAndQueues/StacksAndQueues.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/EmptyStackException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/MyStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListOfLinkedList/src/demo/TestLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ListOfLinkedList/src/demo/TestLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StacksAndQueues/src/demo1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Exception" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
