@@ -3,6 +3,20 @@ package demo1;
 import java.util.Stack;
 
 public class Test {
+    // 判断出栈是否正确
+    public boolean IsPopOrder (int[] pushV, int[] popV) {
+        Stack<Integer> stack = new Stack<>();
+        int j = 0;
+        for (int i = 0; i < pushV.length; i++) {
+            stack.push(pushV[i]);
+            while (!stack.empty() && j < popV.length && stack.peek() == popV[j]) {
+                stack.pop();
+                j++;
+            }
+        }
+        return stack.empty();
+    }
+
     // 判断括号串是否有效
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack();
@@ -99,5 +113,6 @@ public class Test {
         System.out.println(ret2);  // 34
         // 还是可以调用父类的方法
         System.out.println(stack.get(1));
+        stack.empty();
     }
 }
