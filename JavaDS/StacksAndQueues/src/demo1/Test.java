@@ -3,6 +3,41 @@ package demo1;
 import java.util.Stack;
 
 public class Test {
+    // 逆波兰表达式
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for(int i = 0;i < tokens.length;i++) {
+            String s = tokens[i];
+            if(isOperator(s)) {
+                int num2 = stack.pop();
+                int num1 = stack.pop();
+                switch(s.charAt(0)) {
+                    case '+':
+                        stack.push(num1 + num2);
+                        break;
+                    case '-':
+                        stack.push(num1 - num2);
+                        break;
+                    case '*':
+                        stack.push(num1 * num2);
+                        break;
+                    case '/':
+                        stack.push(num1 / num2);
+                        break;
+                }
+            } else {
+                stack.push(Integer.parseInt(s));
+            }
+        }
+        return stack.pop();
+    }
+    private boolean isOperator(String s) {
+        if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")) {
+            return true;
+        }
+        return false;
+    }
+
     // 判断出栈是否正确
     public boolean IsPopOrder (int[] pushV, int[] popV) {
         Stack<Integer> stack = new Stack<>();
@@ -83,12 +118,15 @@ public class Test {
     }*/
 
     public static void main(String[] args) {
+
+    }
+
+    public static void main2(String[] args) {
         MyStack<Integer> myStack = new MyStack<Integer>();
         myStack.push(1);
         myStack.push(2);
         myStack.push(3);
         myStack.push(4);
-
         int popVal = myStack.pop();
         System.out.println(popVal);   // 4
         int peekVal = myStack.peek();

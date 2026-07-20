@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/MinStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StacksAndQueues/src/demo1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo1/Test.java" afterDir="false" />
     </list>
@@ -17,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
