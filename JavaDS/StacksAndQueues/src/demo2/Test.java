@@ -1,10 +1,14 @@
 package demo2;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
+        Deque<Integer> deque = new LinkedList<>();
+        Deque<Integer> deque2 = new ArrayDeque<>();
+    }
+
+    public static void main2(String[] args) {
         MyQueue myQueue = new MyQueue();
         myQueue.offer(12);
         myQueue.offer(23);
