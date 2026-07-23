@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo/MyStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo2/MyCircularQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo/MyQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StacksAndQueues/src/demo2/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo2/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StacksAndQueues/src/demo/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/StacksAndQueues/src/demo/MyStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,33 +62,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo1.Test" />
-      <module name="ListOfArrayList" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demo1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.TestLinkedList" />
-      <module name="ListOfLinkedList" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="List" />
       <method v="2">
@@ -101,12 +74,6 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TestLinkedList" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
