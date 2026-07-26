@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AaaHomework/AaaHomework.iml" filepath="$PROJECT_DIR$/AaaHomework/AaaHomework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BinaryTree/BinaryTree.iml" filepath="$PROJECT_DIR$/BinaryTree/BinaryTree.iml" />
       <module fileurl="file://$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" filepath="$PROJECT_DIR$/CollectionFramework/CollectionFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaDS.iml" filepath="$PROJECT_DIR$/JavaDS.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" filepath="$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" />
