@@ -6,6 +6,21 @@ public class Test {
         BinaryTree.TreeNode root = binaryTree.createTree();
         binaryTree.preOrder(root);
         System.out.println();
+        binaryTree.inOrder(root);
+        System.out.println();
+        binaryTree.postOrder(root);
+        System.out.println();
+        System.out.println("=====================");
+        System.out.println("节点个数: ");
+        binaryTree.size(root);
+        System.out.println(BinaryTree.countSize);
+
+        int nodeCount = binaryTree.nodeSize(root);
+        System.out.println("节点个数: " + nodeCount);
+
+        binaryTree.getLeafNodeCount(root);
+        System.out.println("叶子节点个数: " + BinaryTree.leftCount);
+
     }
 
     public static void main1(String[] args) {
