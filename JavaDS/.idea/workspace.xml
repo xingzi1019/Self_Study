@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AaaHomework/src/ds_4_29/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryTree/src/demo/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree/src/demo/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryTree/src/demo/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree/src/demo/Test.java" afterDir="false" />
@@ -44,7 +45,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Application.CardDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Debug&quot;,
     &quot;Application.TestDemo.executor&quot;: &quot;Run&quot;,
     &quot;Application.TestLinkedList.executor&quot;: &quot;Run&quot;,
     &quot;Application.demo.Test.executor&quot;: &quot;Run&quot;,
@@ -148,8 +149,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BinaryTree/src/demo/Test.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="8" />
+          <line>103</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

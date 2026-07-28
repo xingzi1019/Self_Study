@@ -109,23 +109,55 @@ public class BinaryTree {
     }
 
     // 获取第K层节点的个数
-    int getKLevelNodeCount(TreeNode root, int k) {
-        return 1;
+    public int getKLevelNodeCount(TreeNode root, int k) {
+        if (root == null) {
+            return 0;
+        }
+        if (k == 1) {
+            return 1;
+        }
+        return getKLevelNodeCount(root.left, k - 1) +
+                getKLevelNodeCount(root.right, k - 1);
     }
 
     // 获取⼆叉树的⾼度
-    int getHeight(TreeNode root) {
-        return 1;
+    public int getHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
     }
 
     // 检测值为value的元素是否存在
-    TreeNode find(TreeNode root, int val) {
+    public TreeNode find(TreeNode root, char val) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == val) {
+            return root;
+        }
+        TreeNode ret = find(root.left, val);
+        if (ret != null) {
+            return ret;
+        }
+        TreeNode ret2 = find(root.right, val);
+        if (ret2 != null) {
+            return ret2;
+        }
         return null;
     }
 
     //层序遍历
     void levelOrder(TreeNode root) {
-
+        if (root == null) {
+            return;
+        }
+        if (root.left != null) {
+            System.out.print(root.left.val + " ");
+        }
+        if (root.right != null) {
+            System.out.print(root.right.val + " ");
+        }
     }
 
     // 判断⼀棵树是不是完全⼆叉树
