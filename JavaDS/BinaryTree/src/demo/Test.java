@@ -1,6 +1,27 @@
 package demo;
 
 public class Test {
+    // 101 判断是否是对称二叉树
+    public boolean isSymmetric(BinaryTree.TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return isSymmetricChild(root.left, root.right);
+    }
+
+    public boolean isSymmetricChild(BinaryTree.TreeNode leftTree, BinaryTree.TreeNode rightTree) {
+        if (leftTree == null && rightTree != null || leftTree != null && rightTree == null) {
+            return false;
+        }
+        if (leftTree == null && rightTree == null) {
+            return true;
+        }
+        if (leftTree.val != rightTree.val) {
+            return false;
+        }
+        return isSymmetricChild(leftTree.left, rightTree.right) && isSymmetricChild(leftTree.right, rightTree.left);
+    }
+
     // 226 翻转二叉树
     public BinaryTree.TreeNode invertTree(BinaryTree.TreeNode root) {
         if (root == null) {
