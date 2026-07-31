@@ -1,5 +1,8 @@
 package demo;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
     static class TreeNode {
         public char val;
@@ -148,15 +151,21 @@ public class BinaryTree {
     }
 
     //层序遍历
-    void levelOrder(TreeNode root) {
+    public void levelOrder(TreeNode root) {
         if (root == null) {
             return;
         }
-        if (root.left != null) {
-            System.out.print(root.left.val + " ");
-        }
-        if (root.right != null) {
-            System.out.print(root.right.val + " ");
+        Queue<TreeNode> qu = new LinkedList<>();
+        qu.offer(root);
+        while (!qu.isEmpty()) {
+            TreeNode cur = qu.poll();
+            System.out.print(cur.val + " ");
+            if (cur.left != null) {
+                qu.offer(cur.left);
+            }
+            if (cur.right != null) {
+                qu.offer(cur.right);
+            }
         }
     }
 

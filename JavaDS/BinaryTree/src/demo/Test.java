@@ -1,9 +1,11 @@
 package demo;
 
+import java.util.Queue;
+
 public class Test {
     // 110 判断平衡二叉树优化版 O(N)
     public boolean isBalanced(BinaryTree.TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             return true;
         }
         return getHeight(root) >= 0;
@@ -14,11 +16,11 @@ public class Test {
             return 0;
         }
         int leftH = getHeight(root.left);
-        if(leftH < 0) {
+        if (leftH < 0) {
             return -1;
         }
         int rightH = getHeight(root.right);
-        if(leftH >= 0 && rightH >= 0 && Math.abs(leftH - rightH) <= 1) {
+        if (leftH >= 0 && rightH >= 0 && Math.abs(leftH - rightH) <= 1) {
             return leftH > rightH ? leftH + 1 : rightH + 1;
         } else {
             return -1;
@@ -165,6 +167,9 @@ public class Test {
 
         BinaryTree.TreeNode e = binaryTree.find(root, 'E');
         System.out.println(e.val);
+
+        System.out.println("层序遍历: ");
+        binaryTree.levelOrder(root);
     }
 
     public static void main1(String[] args) {
