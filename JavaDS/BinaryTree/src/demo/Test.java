@@ -1,6 +1,47 @@
 package demo;
 
 public class Test {
+    // 110 判断平衡二叉树优化版 O(N)
+    public boolean isBalanced(BinaryTree.TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        return getHeight(root) >= 0;
+    }
+
+    private int getHeight(BinaryTree.TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftH = getHeight(root.left);
+        if(leftH < 0) {
+            return -1;
+        }
+        int rightH = getHeight(root.right);
+        if(leftH >= 0 && rightH >= 0 && Math.abs(leftH - rightH) <= 1) {
+            return leftH > rightH ? leftH + 1 : rightH + 1;
+        } else {
+            return -1;
+        }
+    }
+
+    // 110判断平衡二叉树 O(N ^ 2)
+    /*public boolean isBalanced(BinaryTree.TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        int leftH = getHeight(root.left);
+        int rightH = getHeight(root.right);
+        return Math.abs(leftH - rightH) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    private int getHeight(BinaryTree.TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+    }*/
+
     // 101 判断是否是对称二叉树
     public boolean isSymmetric(BinaryTree.TreeNode root) {
         if (root == null) {
