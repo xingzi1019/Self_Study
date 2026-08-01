@@ -1,7 +1,6 @@
 package demo;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTree {
     static class TreeNode {
@@ -169,8 +168,149 @@ public class BinaryTree {
         }
     }
 
+    // 层序遍历
+    public List<List<Character>> levelOrder2(TreeNode root) {
+        List<List<Character>> ret = new ArrayList<>();
+        if (root == null) {
+            return ret;
+        }
+        Queue<TreeNode> qu = new LinkedList<>();
+        qu.offer(root);
+        while (!qu.isEmpty()) {
+            List<Character> curRow = new ArrayList();
+            int size = qu.size();
+            while (size != 0) {
+                TreeNode cur = qu.poll();
+                curRow.add(cur.val);
+                if (cur.left != null) {
+                    qu.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    qu.offer(cur.right);
+                }
+                size--;
+            }
+            ret.add(curRow);
+        }
+        return ret;
+    }
+
     // 判断⼀棵树是不是完全⼆叉树
-    boolean isCompleteTree(TreeNode root) {
+    public boolean isCompleteTree2(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean seenNull = false;
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur == null) {
+                seenNull = true;
+            } else {
+                if (seenNull) return false; // 在 null 之后又出现非 null
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+            }
+        }
         return true;
     }
+
+    public boolean isCompleteTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur != null) {
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+            } else {
+                break;
+            }
+        }
+        int size = queue.size();
+        while (size != 0) {
+            if (queue.poll() != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // 236 返回 p q 的公共祖先
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+        if (root == p || root == q) {
+            return root;
+        }
+        TreeNode ln = lowestCommonAncestor(root.left, p, q);
+        TreeNode rn = lowestCommonAncestor(root.right, p, q);
+        if (ln != null && rn != null) {
+            return root;
+        } else if (ln != null) {
+            return ln;
+        } else {
+            return rn;
+        }
+    }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+        Stack<TreeNode> sp = new Stack<>();
+        Stack<TreeNode> sq = new Stack<>();
+        getPath(root, p, sp);
+        getPath(root, q, sq);
+        int lp = sp.size();
+        int lq = sq.size();
+        int size = lp - lq;
+        if (size > 0) {
+            while (size != 0) {
+                sp.pop();
+                size--;
+            }
+        } else {
+            while (size != 0) {
+                sq.pop();
+                size++;
+            }
+        }
+        while (!sp.isEmpty() && !sq.isEmpty()) {
+            if (sp.peek().equals(sq.peek())) {
+                return sp.peek();
+            }
+            sp.pop();
+            sq.pop();
+        }
+        return null;
+    }
+
+    /**
+     * 找到 root 到 node 路径上的所有节点 存储在栈上
+     *
+     * @param root  根
+     * @param node  节点
+     * @param stack 栈
+     * @return 能不能找到
+     */
+    public boolean getPath(TreeNode root, TreeNode node,
+                           Stack<TreeNode> stack) {
+        if (root == null)
+            return false;
+        stack.push(root);
+        if (root == node)
+            return true;
+        boolean flg = getPath(root.left, node, stack);
+        if (flg)
+            return true;
+        flg = getPath(root.right, node, stack);
+        if (flg)
+            return true;
+        stack.pop();
+        return false;
+    }
+
 }
