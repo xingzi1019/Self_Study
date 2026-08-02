@@ -313,4 +313,85 @@ public class BinaryTree {
         return false;
     }
 
+    // 105 从前序和中序遍历构造二叉树
+    public int preIndex = 0;
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return buildTreeChild(preorder, inorder, 0, inorder.length - 1);
+    }
+
+    public int findVal(int[] inorder, int inbegin, int inend, int key) {
+        for (int i = inbegin; i <= inend; i++) {
+            if (inorder[i] == key) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public TreeNode buildTreeChild(int[] preorder, int[] inorder, int inbegin, int inend) {
+        if (inbegin > inend) {
+            return null;
+        }
+        TreeNode root = new TreeNode((char) preorder[preIndex]);
+        int rootIndex = findVal(inorder, inbegin, inend, preorder[preIndex]);
+        preIndex++;
+        root.left = buildTreeChild(preorder, inorder, inbegin, rootIndex - 1);
+        root.right = buildTreeChild(preorder, inorder, rootIndex + 1, inend);
+        return root;
+    }
+    // 中序和后序构建二叉树
+    /*class Solution {
+        public int preIndex = 0;
+        public TreeNode buildTree(int[] inorder, int[] postorder) {
+            preIndex = postorder.length - 1;
+            return buildTreeChild(postorder, inorder, 0, inorder.length - 1);
+        }
+        public int findVal(int[] inorder, int inbegin,int inend,int key) {
+            for (int i = inbegin; i <= inend; i++) {
+                if(inorder[i] == key) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public TreeNode buildTreeChild(int[] postorder, int[] inorder, int inbegin, int inend) {
+            if (inbegin > inend) {
+                return null;
+            }
+            TreeNode root = new TreeNode(postorder[preIndex]);
+            int rootIndex = findVal(inorder, inbegin, inend, postorder[preIndex]);
+            preIndex--;
+            root.right = buildTreeChild(postorder,inorder,rootIndex + 1,inend);
+            root.left = buildTreeChild(postorder,inorder,inbegin,rootIndex-1);
+            return root;
+        }
+    }*/
+    // 606 根据二叉树创建字符串
+    public String tree2str(TreeNode root) {
+        StringBuilder s = new StringBuilder();
+        tree2strChild(root, s);
+        return s.toString();
+    }
+
+    public void tree2strChild(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            return;
+        }
+        sb.append(root.val);
+        if (root.left != null) {
+            sb.append('(');
+            tree2strChild(root.left, sb);
+            sb.append(')');
+        } else if (root.right != null) {
+            sb.append("()");
+        }
+        if (root.right != null) {
+            sb.append('(');
+            tree2strChild(root.right, sb);
+            sb.append(')');
+        }
+    }
 }
+
