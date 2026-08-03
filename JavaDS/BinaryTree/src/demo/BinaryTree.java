@@ -340,6 +340,7 @@ public class BinaryTree {
         root.right = buildTreeChild(preorder, inorder, rootIndex + 1, inend);
         return root;
     }
+
     // 中序和后序构建二叉树
     /*class Solution {
         public int preIndex = 0;
@@ -397,7 +398,7 @@ public class BinaryTree {
     // 144 二叉树的前序递归实现
     public List<Integer> preorderTraversal1(TreeNode root) {
         List<Integer> list = new LinkedList<>();
-        if(root == null) {
+        if (root == null) {
             return list;
         }
         list.add((int) root.val);
@@ -407,17 +408,18 @@ public class BinaryTree {
         list.addAll(listRight);
         return list;
     }
+
     // 二叉树的前序非递归实现
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-        if(root == null) {
+        if (root == null) {
             return list;
         }
         TreeNode cur = root;
         TreeNode top = null;
         Deque<TreeNode> stack = new LinkedList<>();
-        while(cur != null || !stack.isEmpty()) {
-            while(cur != null) {
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
                 stack.push(cur);
                 list.add((int) cur.val);
                 cur = cur.left;
@@ -431,7 +433,7 @@ public class BinaryTree {
     //94 二叉树的中序递归实现
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-        if(root == null) {
+        if (root == null) {
             return list;
         }
         list.addAll(inorderTraversal(root.left));
@@ -439,31 +441,32 @@ public class BinaryTree {
         list.addAll(inorderTraversal(root.right));
         return list;
     }
+
     // 二叉树的中序非递归实现
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-        if(root == null) {
+        if (root == null) {
             return list;
         }
         TreeNode cur = root;
         TreeNode top = null;
         Deque<TreeNode> stack = new LinkedList<>();
-        while(cur != null || !stack.isEmpty()) {
-            while(cur != null) {
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
                 stack.push(cur);
                 cur = cur.left;
             }
             top = stack.pop();
-            list.add(top.val);
+            list.add((int) top.val);
             cur = top.right;
         }
         return list;
     }
 
     //145 二叉树的后序递归实现
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal1(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-        if(root == null) {
+        if (root == null) {
             return list;
         }
         list.addAll(postorderTraversal(root.left));
@@ -471,7 +474,69 @@ public class BinaryTree {
         list.add((int) root.val);
         return list;
     }
+
     // 二叉树的后序非递归实现
-    
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode prev = null; // 记录上一个访问的节点
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            // 先走到最左边
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            // 查看栈顶元素
+            cur = stack.peek();
+            // 如果右子树为空或者右子树已被访问，则访问当前节点
+            if (cur.right == null || cur.right == prev) {
+                list.add((int) cur.val);
+                stack.pop();
+                prev = cur;
+                cur = null; // 继续处理栈中的下一个节点
+            } else {
+                // 否则先处理右子树
+                cur = cur.right;
+            }
+        }
+        return list;
+    }
+    // 双栈法
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+        // stack1: 用于遍历所有节点，模拟前序遍历的变体（根->右->左）
+        Deque<TreeNode> stack1 = new LinkedList<>();
+        // stack2: 用于反转顺序，将"根右左"变成"左右根"
+        Deque<TreeNode> stack2 = new LinkedList<>();
+        // 第一步：用stack1进行"根->右->左"的遍历
+        stack1.push(root); // 先把根节点压入stack1
+        while (!stack1.isEmpty()) {
+            // 弹出当前节点，压入stack2
+            TreeNode node = stack1.pop();
+            stack2.push(node);
+            // 注意这里入栈顺序：先左后右
+            // 因为stack1是栈，后进先出，所以先压左，再压右
+            // 这样出栈顺序就是先右后左，配合上面的pop，整体就是"根->右->左"
+            if (node.left != null) {
+                stack1.push(node.left);   // 左子节点先入栈
+            }
+            if (node.right != null) {
+                stack1.push(node.right);  // 右子节点后入栈
+            }
+        }
+        // 第二步：从stack2中依次弹出节点
+        // stack2中存储的顺序是"根->右->左"
+        // 弹出顺序就是"左->右->根"，即后序遍历
+        while (!stack2.isEmpty()) {
+            list.add((int) stack2.pop().val);
+        }
+
+        return list;
+    }
 }
 
