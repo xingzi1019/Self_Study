@@ -393,5 +393,85 @@ public class BinaryTree {
             sb.append(')');
         }
     }
+
+    // 144 二叉树的前序递归实现
+    public List<Integer> preorderTraversal1(TreeNode root) {
+        List<Integer> list = new LinkedList<>();
+        if(root == null) {
+            return list;
+        }
+        list.add((int) root.val);
+        List<Integer> listLeft = preorderTraversal(root.left);
+        List<Integer> listRight = preorderTraversal(root.right);
+        list.addAll(listLeft);
+        list.addAll(listRight);
+        return list;
+    }
+    // 二叉树的前序非递归实现
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null) {
+            return list;
+        }
+        TreeNode cur = root;
+        TreeNode top = null;
+        Deque<TreeNode> stack = new LinkedList<>();
+        while(cur != null || !stack.isEmpty()) {
+            while(cur != null) {
+                stack.push(cur);
+                list.add((int) cur.val);
+                cur = cur.left;
+            }
+            top = stack.pop();
+            cur = top.right;
+        }
+        return list;
+    }
+
+    //94 二叉树的中序递归实现
+    public List<Integer> inorderTraversal1(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null) {
+            return list;
+        }
+        list.addAll(inorderTraversal(root.left));
+        list.add((int) root.val);
+        list.addAll(inorderTraversal(root.right));
+        return list;
+    }
+    // 二叉树的中序非递归实现
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null) {
+            return list;
+        }
+        TreeNode cur = root;
+        TreeNode top = null;
+        Deque<TreeNode> stack = new LinkedList<>();
+        while(cur != null || !stack.isEmpty()) {
+            while(cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            top = stack.pop();
+            list.add(top.val);
+            cur = top.right;
+        }
+        return list;
+    }
+
+    //145 二叉树的后序递归实现
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null) {
+            return list;
+        }
+        list.addAll(postorderTraversal(root.left));
+        list.addAll(postorderTraversal(root.right));
+        list.add((int) root.val);
+        return list;
+    }
+    // 二叉树的后序非递归实现
+    
 }
 
