@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/JavaDS.iml" filepath="$PROJECT_DIR$/JavaDS.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" filepath="$PROJECT_DIR$/ListOfArrayList/ListOfArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListOfLinkedList/ListOfLinkedList.iml" filepath="$PROJECT_DIR$/ListOfLinkedList/ListOfLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PriorityQueue/PriorityQueue.iml" filepath="$PROJECT_DIR$/PriorityQueue/PriorityQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksAndQueues/StacksAndQueues.iml" filepath="$PROJECT_DIR$/StacksAndQueues/StacksAndQueues.iml" />
       <module fileurl="file://$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" filepath="$PROJECT_DIR$/WrapperClassesAndGenerics/WrapperClassesAndGenerics.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZzzTemp/ZzzTemp.iml" filepath="$PROJECT_DIR$/ZzzTemp/ZzzTemp.iml" />
