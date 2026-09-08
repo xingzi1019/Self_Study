@@ -1,5 +1,8 @@
 package demo;
 
+import java.util.Arrays;
+
+// 不理解或者有啥疑问就回去看算法竞赛课程的讲解
 public class TestHeap {
     public int[] elem;
     public int usedSize;
@@ -61,8 +64,51 @@ public class TestHeap {
         elem[parent] = tmp;
     }
 
-    // 向上调整算法
-    private void siftUp(int parent,int usedSize) {
+    // 堆的插⼊总共需要两个步骤：
+    // 1. 先将元素放⼊到底层空间中(注意：空间不够时需要扩容)
+    // 2. 将最后新插⼊的节点向上调整，直到满⾜堆的性质
 
+    private void offer(int val) {
+        if (isFull()) {
+            elem = Arrays.copyOf(elem, 2 * elem.length);
+        }
+        elem[usedSize] = val;
+        siftUp(usedSize);
+        usedSize++;
+    }
+
+    public void siftUp(int child) {
+        // 当 child = 0 时：
+        // parent = (0 - 1) / 2 = 0（Java 中 -1/2 = 0）
+        while (child > 0) {
+            int parent = (child - 1) / 2;
+            if (elem[child] > elem[parent]) {
+                swap(elem, child, parent);
+                child = parent;
+            } else {
+                break;
+            }
+        }
+        // 时间复杂度(log N)
+    }
+
+    public boolean isFull() {
+        return usedSize == elem.length;
+    }
+
+    // 注意：堆的删除⼀定删除的是堆顶元素
+    public int poll() {
+        if(isEmpty()) {
+            return -1;
+        }
+        int ret = elem[0];
+        swap(elem,0,usedSize-1);
+        usedSize--;
+        siftDown(0,usedSize);
+        return ret;
+    }
+
+    public boolean isEmpty() {
+        return usedSize == 0;
     }
 }
