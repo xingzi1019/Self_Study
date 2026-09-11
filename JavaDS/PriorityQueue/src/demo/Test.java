@@ -11,10 +11,25 @@ package demo;
  * 7. PriorityQueue默认情况下是⼩堆---即每次获取到的元素都是最⼩的元素
  */
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 // PriorityQueue是线程不安全的，PriorityBlockingQueue是线程安全的
 public class Test {
-    public static void main() {
+    public static void main(String[] args) {
+        // 大根堆的建立方法一 匿名内部类
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;  // 大的元素排在前面
+            }
+        });
+        // Lambda 表达式
+        PriorityQueue<Integer> maxHeap2 = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        // Comparator 静态方法
+        PriorityQueue<Integer> maxHeap3 = new PriorityQueue<>(Comparator.reverseOrder());
+    }
+
+    public static void main2() {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         priorityQueue.offer(10);
         priorityQueue.offer(3);
