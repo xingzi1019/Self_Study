@@ -98,17 +98,27 @@ public class TestHeap {
 
     // 注意：堆的删除⼀定删除的是堆顶元素
     public int poll() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return -1;
         }
         int ret = elem[0];
-        swap(elem,0,usedSize-1);
+        swap(elem, 0, usedSize - 1);
         usedSize--;
-        siftDown(0,usedSize);
+        siftDown(0, usedSize);
         return ret;
     }
 
     public boolean isEmpty() {
         return usedSize == 0;
+    }
+
+    // 堆排序
+    public void heapSort() {
+        int end = usedSize - 1;
+        while (end > 0) {
+            swap(elem, 0, end);
+            siftDown(0, end);
+            end--;
+        }
     }
 }
