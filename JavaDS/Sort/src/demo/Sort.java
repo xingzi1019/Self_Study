@@ -93,6 +93,14 @@ public class Sort {
         return swapped;
     }
 
+    /**
+     * 堆排序
+     *
+     * @param array 待排序数组
+     *              时间复杂度 O(N*logN)
+     *              空间复杂度 O(1)
+     *              不稳定的排序
+     */
     public static void heapSort(int[] array) {
         // 创建大根堆
         createHeap(array);
@@ -136,13 +144,40 @@ public class Sort {
      * 选择排序
      *
      * @param array 待排序数组
-     *              时间复杂度  O()
-     *              稳定的排序
-     *              每一次从待排序的数据元素中选出最小（或最大）的一个元素
-     *              存放在序列的起始位置
+     *              时间复杂度 O(N*2)
+     *              空间复杂度 O(1)
+     *              不稳定的排序 e.g. 5 5 3 1 2 2
+     *              每一次从待排序的数据元素中选出最小（或最大）的一个元素存放在序列的起始位置
      *              直到全部待排序的数据元素排完
      */
     public static void selectSort(int[] array) {
-
+        for (int j = 0; j < array.length - 1; j++) {
+            int minIndex = j;  // 假设当前 j 位置是最小值
+            for (int i = j + 1; i < array.length; i++) {
+                if (array[i] < array[minIndex]) {
+                    minIndex = i;
+                }
+            }
+            swap(array, j, minIndex); // j == minIndex相等的时候会无效交换
+        }
     }
+
+    /**
+     * 冒泡排序
+     * @param array 待排序数组
+     *              时间复杂度 O(N*2)
+     *              空间复杂度 O(1)
+     *              稳定的排序
+     */
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i; j < array.length - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+    }
+    // 冒泡 快速 归并
+    
 }

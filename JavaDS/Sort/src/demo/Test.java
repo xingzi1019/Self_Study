@@ -3,6 +3,7 @@ package demo;
 import java.util.Arrays;
 import java.util.Random;
 
+// 归并 冒泡 插入是稳定的排序
 public class Test {
     // 从小到大
     public static void order(int[] array) {
@@ -46,16 +47,37 @@ public class Test {
         System.out.println("希尔排序耗时:" + (endTime - startTime));
     }
 
-    public static void main1(String[] args) {
+    public static void testHeapSort(int[] array) {
+        int[] array2 = Arrays.copyOf(array, array.length);
+        // 拷贝一份 这样不会影响原来的数组
+        long startTime = System.currentTimeMillis();
+        Sort.heapSort(array2);
+        long endTime = System.currentTimeMillis();
+        System.out.println("堆排序耗时:" + (endTime - startTime));
+    }
+
+    public static void testSelectSort(int[] array) {
+        int[] array2 = Arrays.copyOf(array, array.length);
+        // 拷贝一份 这样不会影响原来的数组
+        long startTime = System.currentTimeMillis();
+        Sort.selectSort(array2);
+        long endTime = System.currentTimeMillis();
+        System.out.println("选择排序耗时:" + (endTime - startTime));
+    }
+
+    public static void main(String[] args) {
         int[] array = new int[10_0000];
         // order(array);
         notOrder(array);
         //randomOrder(array);
-        testInsertSort(array); // 直接插入排序耗时:1674
-        testShellSort(array);  // 希尔排序耗时:4
+        testInsertSort(array);
+        testShellSort(array);
+        testHeapSort(array);
+        testSelectSort(array);
+        // System.out.println(Arrays.toString(array));
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] array = {31, 12, 13, 41, 54, 66, 27, 18};
         Sort.heapSort(array);
         System.out.println(Arrays.toString(array));
