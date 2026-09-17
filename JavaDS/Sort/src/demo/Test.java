@@ -37,17 +37,27 @@ public class Test {
         System.out.println("直接插入排序耗时:" + (endTime - startTime));
     }
 
+    public static void testShellSort(int[] array) {
+        int[] array2 = Arrays.copyOf(array, array.length);
+        // 拷贝一份 这样不会影响原来的数组
+        long startTime = System.currentTimeMillis();
+        Sort.shellSort(array2);
+        long endTime = System.currentTimeMillis();
+        System.out.println("希尔排序耗时:" + (endTime - startTime));
+    }
+
     public static void main1(String[] args) {
         int[] array = new int[10_0000];
         // order(array);
-        //notOrder(array);
-        randomOrder(array);
-        testInsertSort(array);
+        notOrder(array);
+        //randomOrder(array);
+        testInsertSort(array); // 直接插入排序耗时:1674
+        testShellSort(array);  // 希尔排序耗时:4
     }
 
     public static void main(String[] args) {
         int[] array = {31, 12, 13, 41, 54, 66, 27, 18};
-        Sort.shellSort(array);
+        Sort.heapSort(array);
         System.out.println(Arrays.toString(array));
         // [12, 13, 18, 27, 31, 41, 54, 66]
     }

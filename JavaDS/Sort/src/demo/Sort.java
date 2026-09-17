@@ -1,5 +1,7 @@
 package demo;
 
+import static java.util.Collections.swap;
+
 public class Sort {
     /**
      * 直接插入排序
@@ -59,6 +61,7 @@ public class Sort {
             array[j + gap] = tmp;
         }
     }
+
     // 希尔排序剪枝优化版
     public static void shellSort2(int[] array) {
         int n = array.length;
@@ -88,5 +91,58 @@ public class Sort {
             array[j + gap] = tmp;
         }
         return swapped;
+    }
+
+    public static void heapSort(int[] array) {
+        // 创建大根堆
+        createHeap(array);
+        int end = array.length - 1;
+        while (end > 0) {
+            swap(array, 0, end);
+            siftDown(array, 0, array.length);
+            end--;
+        }
+    }
+
+    private static void createHeap(int[] array) {
+        for (int parent = (array.length - 1 - 1) / 2; parent >= 0; parent--) {
+            siftDown(array, parent, array.length);
+        }
+    }
+
+    private static void siftDown(int[] array, int parent, int len) {
+        int child = parent * 2 + 1;
+        while (child < len) {
+            if (child + 1 < len && array[child] < array[child + 1]) {
+                child++;
+            }
+            if (array[child] > array[parent]) {
+                swap(array, child, parent);
+                parent = child;
+                child = parent * 2 + 1;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+
+    /**
+     * 选择排序
+     *
+     * @param array 待排序数组
+     *              时间复杂度  O()
+     *              稳定的排序
+     *              每一次从待排序的数据元素中选出最小（或最大）的一个元素
+     *              存放在序列的起始位置
+     *              直到全部待排序的数据元素排完
+     */
+    public static void selectSort(int[] array) {
+
     }
 }
