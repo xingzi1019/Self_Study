@@ -3,7 +3,7 @@ package demo;
 import java.util.Arrays;
 import java.util.Random;
 
-// 归并 冒泡 插入是稳定的排序
+// 归并 冒泡 插入是稳定的排=
 public class Test {
     // 从小到大
     public static void order(int[] array) {
