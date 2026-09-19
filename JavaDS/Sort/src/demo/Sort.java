@@ -100,6 +100,7 @@ public class Sort {
      *              时间复杂度 O(N*logN)
      *              空间复杂度 O(1)
      *              不稳定的排序
+     *              不懂去看算法竞赛的比较快
      */
     public static void heapSort(int[] array) {
         // 创建大根堆
@@ -164,20 +165,69 @@ public class Sort {
 
     /**
      * 冒泡排序
+     *
      * @param array 待排序数组
-     *              时间复杂度 O(N*2)
+     *              时间复杂度 最好O(N) 最差O(N*2)
      *              空间复杂度 O(1)
      *              稳定的排序
      */
     public static void bubbleSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
+            boolean flag = false;
             for (int j = i; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
                     swap(array, j, j + 1);
+                    flag = true;
                 }
+            }
+            if (!flag) {
+                return;
             }
         }
     }
-    // 冒泡 快速 归并
 
+    /**
+     * 快速排序
+     *
+     * @param array 待排序数组
+     *              时间复杂度 O()
+     *              空间复杂度 O()
+     *              不稳定的排序
+     *              任取待排序元素
+     *              序列中的某元素作为基准值 按照该排序码将待排序集合分割成两⼦序列
+     *              左⼦序列中所有元素均⼩于基准值 右⼦序列中所有元素均⼤于基准值
+     *              然后最左右⼦序列重复该过程
+     *              直到所有元素都排列在相应位置上为⽌
+     *              类似前序遍历
+     */
+    public static void quickSort(int[] array) {
+        quick(array, 0, array.length - 1);
+    }
+
+    private static void quick(int[] array, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        int par = partition(array, start, end);
+        quick(array, start, par - 1);
+        quick(array, par + 1, end);
+    }
+
+    private static int partition(int[] array, int low, int high) {
+        int pivot = array[low];
+        int save = low;
+        while (low < high) {
+            while (array[high] >= pivot && low < high) { // 注意这里的等号
+                high--;
+            }
+            while (low < high && array[low] <= pivot) {
+                low++;
+            }
+            swap(array, low, high);
+        }
+        swap(array, save, low);
+        return low;
+    }
+
+    // 归并
 }

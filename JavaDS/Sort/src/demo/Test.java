@@ -3,7 +3,7 @@ package demo;
 import java.util.Arrays;
 import java.util.Random;
 
-// 归并 冒泡 插入是稳定的排=
+// 归并 冒泡 插入是稳定的排序
 public class Test {
     // 从小到大
     public static void order(int[] array) {
@@ -65,7 +65,7 @@ public class Test {
         System.out.println("选择排序耗时:" + (endTime - startTime));
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] array = new int[10_0000];
         // order(array);
         notOrder(array);
@@ -77,9 +77,9 @@ public class Test {
         // System.out.println(Arrays.toString(array));
     }
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         int[] array = {31, 12, 13, 41, 54, 66, 27, 18};
-        Sort.heapSort(array);
+        Sort.quickSort(array);
         System.out.println(Arrays.toString(array));
         // [12, 13, 18, 27, 31, 41, 54, 66]
     }
