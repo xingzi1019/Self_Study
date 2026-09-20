@@ -1,5 +1,8 @@
 package demo;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 import static java.util.Collections.swap;
 
 public class Sort {
@@ -292,8 +295,33 @@ public class Sort {
         return low;
     }
 
+    // 用栈不用递归
     public static void quickSorNor(int[] array) {
-        int par = partition(array,)
+        int start = 0;
+        int end = array.length - 1;
+        int par = partition(array, start, end);
+        Deque<Integer> stack = new LinkedList<>();
+        if (start + 1 < par) {
+            stack.push(start);
+            stack.push(par - 1);
+        }
+        if (par + 1 < end) {
+            stack.push(par + 1);
+            stack.push(end);
+        }
+        while (!stack.isEmpty()) {
+            start = stack.pop();
+            end = stack.pop();
+            par = partition(array, start, end);
+            if (start + 1 < par) {
+                stack.push(start);
+                stack.push(par - 1);
+            }
+            if (par + 1 < end) {
+                stack.push(par + 1);
+                stack.push(end);
+            }
+        }
     }
 
     /**
