@@ -65,6 +65,15 @@ public class Test {
         System.out.println("选择排序耗时:" + (endTime - startTime));
     }
 
+    public static void testQuickSort(int[] array) {
+        int[] array2 = Arrays.copyOf(array, array.length);
+        // 拷贝一份 这样不会影响原来的数组
+        long startTime = System.currentTimeMillis();
+        Sort.quickSort(array2);
+        long endTime = System.currentTimeMillis();
+        System.out.println("快速排序耗时:" + (endTime - startTime));
+    }
+
     public static void main1(String[] args) {
         int[] array = new int[10_0000];
         // order(array);

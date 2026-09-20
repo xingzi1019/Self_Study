@@ -189,9 +189,9 @@ public class Sort {
     /**
      * 快速排序
      *
-     * @param array 待排序数组
-     *              时间复杂度 O()
-     *              空间复杂度 O()
+     * @param array 待排序数组 一般快排的时空复杂度说的是好情况
+     *              时间复杂度 O(N*logN)~O(N^2)
+     *              空间复杂度 O(logN)~O(N)
      *              不稳定的排序
      *              任取待排序元素
      *              序列中的某元素作为基准值 按照该排序码将待排序集合分割成两⼦序列
@@ -208,12 +208,75 @@ public class Sort {
         if (start >= end) {
             return;
         }
+        if (end - start + 1 <= 10) {
+            insertSortRange(array, start, end);
+            return;
+        }
+        // 进行三数取中 如果斜树会退化为 O(N*2)
+        int index = threeMid(array, start, end); // 这两行可以删不影响
+        swap(array, start, index);               // 这两行可以删不影响
         int par = partition(array, start, end);
         quick(array, start, par - 1);
         quick(array, par + 1, end);
     }
 
+    private static void insertSortRange(int[] array, int low, int high) {
+        for (int i = low + 1; i <= high; i++) {
+            int tmp = array[i];
+            int j = i - 1;
+            for (j = i - 1; j >= 0; j--) {
+                if (array[j] > tmp) { // 不加等号就稳定 加了不稳定
+                    array[j + 1] = array[j];
+                } else {
+                    // array[j + 1] = tmp;
+                    break;
+                }
+            }
+            array[j + 1] = tmp;
+        }
+    }
+
+    // 三数取中
+    private static int threeMid(int[] array, int low, int high) {
+        int mid = (low + high) / 2;
+        if (array[low] < array[high]) {
+            if (array[mid] < array[low]) {
+                return low;
+            } else if (array[high] < array[mid]) {
+                return high;
+            } else {
+                return mid;
+            }
+        } else {
+            if (array[high] > array[mid]) {
+                return high;
+            } else if (array[mid] > array[low]) {
+                return low;
+            } else {
+                return mid;
+            }
+        }
+    }
+
     private static int partition(int[] array, int low, int high) {
+        int pivot = array[low];  // 挖坑：保存基准值，low位置成为"坑"
+        while (low < high) {
+            // 从右向左找小于pivot的元素
+            while (low < high && array[high] >= pivot) {
+                high--;
+            }
+            array[low] = array[high];  // 填坑：将找到的元素填入low位置的坑
+            // 从左向右找大于pivot的元素
+            while (low < high && array[low] <= pivot) {
+                low++;
+            }
+            array[high] = array[low];  // 填坑：将找到的元素填入high位置的坑
+        }
+        array[low] = pivot;  // 将基准值放入最终位置
+        return low;
+    }
+
+    private static int partitionHoare(int[] array, int low, int high) {
         int pivot = array[low];
         int save = low;
         while (low < high) {
@@ -229,5 +292,19 @@ public class Sort {
         return low;
     }
 
-    // 归并
+    public static void quickSorNor(int[] array) {
+        int par = partition(array,)
+    }
+
+    /**
+     * 归并排序
+     *
+     * @param array 待排序数组
+     *              时间复杂度：O(N*logN)
+     *              空间复杂度：O(N)
+     *              稳定的排序
+     */
+    public static void guibinSort(int[] array) {
+
+    }
 }
