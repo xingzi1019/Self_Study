@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bu1ecmr37cd5g"]
+
+[ext_resource type="Script" uid="uid://b6kc0dr1uly36" path="res://test.gd" id="1_lutej"]
+[ext_resource type="Texture2D" uid="uid://d02rtisojwulf" path="res://graphics/objects/tree potted.png" id="2_214j1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snu8a"]
+size = Vector2(14, 28.5)
+
+[node name="Tree" type="CharacterBody2D" unique_id=1645078457]
+script = ExtResource("1_lutej")
+
+[node name="tree3" type="Sprite2D" parent="." unique_id=1175988362]
+position = Vector2(7, 16)
+texture = ExtResource("2_214j1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430995417]
+position = Vector2(7, 17.75)
+shape = SubResource("RectangleShape2D_snu8a")
