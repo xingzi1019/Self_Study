@@ -332,7 +332,49 @@ public class Sort {
      *              空间复杂度：O(N)
      *              稳定的排序
      */
-    public static void guibinSort(int[] array) {
+    public static void mergeSort(int[] array) {
+        mergeSortChild(array, 0, array.length - 1);
+    }
+
+    private static void mergeSortChild(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int mid = (left + right) / 2;
+        mergeSortChild(array, left, mid); // 不要写成mid-1
+        mergeSortChild(array, mid + 1, right);
+        merge(array, left, mid, right);
+    }
+
+    // 这个合并两个有序数组写过几万遍 递归实现
+    private static void merge(int[] array, int left, int mid, int right) {
+        int[] tmp = new int[right - left + 1];
+        int k = 0;
+        int s1 = left;
+        int e1 = mid;
+        int s2 = mid + 1;
+        int e2 = right;
+        while (s1 <= e1 && s2 <= e2) {
+            if (array[s1] <= array[s2]) {
+                tmp[k++] = array[s1++];
+            } else {
+                tmp[k++] = array[s2++];
+            }
+        }
+        // 这两个只会进去一个
+        while (s1 <= e1) {
+            tmp[k++] = array[s1++];
+        }
+        while (s2 <= e2) {
+            tmp[k++] = array[s2++];
+        }
+        for (int i = 0; i < tmp.length; i++) {
+            array[i + left] = tmp[i];
+        }
+    }
+
+    // 归并排序非递归实现
+    public static void mergeSort2(int[] array) {
 
     }
 }
