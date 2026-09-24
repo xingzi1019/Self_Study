@@ -375,6 +375,21 @@ public class Sort {
 
     // 归并排序非递归实现
     public static void mergeSort2(int[] array) {
-
+        int gap = 1;
+        while (gap < array.length) {
+            for (int i = 0; i < array.length; i = i + 2 * gap) {
+                int left = i;
+                int mid = left + gap - 1;
+                if (mid >= array.length) {
+                    mid = array.length - 1;
+                }
+                int right = mid + gap - 1;
+                if (right >= array.length) {
+                    right = array.length - 1;
+                }
+                merge(array, left, mid, right);
+            }
+            gap *= 2;
+        }
     }
 }
