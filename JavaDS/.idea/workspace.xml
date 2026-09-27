@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AaaHomework/src/ds_5_15/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MapAndSet/MapAndSet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MapAndSet/src/set/BinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MapAndSet/src/set/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sort/src/demo/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sort/src/demo/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapAndSet/src/set/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/MapAndSet/src/set/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapAndSet/src/set/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/MapAndSet/src/set/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +52,7 @@
     "Application.TestLinkedList.executor": "Run",
     "Application.demo.Test.executor": "Run",
     "Application.demo2.Test.executor": "Run",
-    "Application.set.Test.executor": "Run",
+    "Application.set.Test.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -70,7 +66,7 @@
     "settings.editor.selected.configurable": "editor.preferences.folding"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.set.Test">
+  <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demo.Test" />
       <module name="BinaryTree" />
@@ -225,6 +221,11 @@
           <url>file://$PROJECT_DIR$/Sort/src/demo/Test.java</url>
           <line>90</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MapAndSet/src/set/Test.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

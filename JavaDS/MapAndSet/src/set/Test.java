@@ -13,11 +13,13 @@ public class Test {
     //
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        int[] array = {30, 20, 50, 40, 60};
+        int[] array = {30, 20, 50, 40, 60, 55};
         for (int i = 0; i < array.length; i++) {
             binarySearchTree.insert(array[i]);
         }
         BinarySearchTree.TreeNode treeNode = binarySearchTree.search(30);
         System.out.println(treeNode.val); // 30
+
+        binarySearchTree.remove(50);
     }
 }
