@@ -111,7 +111,7 @@ public class Sort {
         int end = array.length - 1;
         while (end > 0) {
             swap(array, 0, end);
-            siftDown(array, 0, array.length);
+            siftDown(array, 0, end); // 只调整 [0, end) 已排好的end位置不能动
             end--;
         }
     }
@@ -177,7 +177,7 @@ public class Sort {
     public static void bubbleSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             boolean flag = false;
-            for (int j = i; j < array.length - 1 - i; j++) {
+            for (int j = 0; j < array.length - 1 - i; j++) { // 必须从0开始，从i开始会漏掉前半段
                 if (array[j] > array[j + 1]) {
                     swap(array, j, j + 1);
                     flag = true;
@@ -301,6 +301,7 @@ public class Sort {
         int end = array.length - 1;
         int par = partition(array, start, end);
         Deque<Integer> stack = new LinkedList<>();
+        // 用了 push 和 pop 就是栈 因为先进后出
         if (start + 1 < par) {
             stack.push(start);
             stack.push(par - 1);
@@ -344,9 +345,10 @@ public class Sort {
         mergeSortChild(array, left, mid); // 不要写成mid-1
         mergeSortChild(array, mid + 1, right);
         merge(array, left, mid, right);
+        // 类似左右根 看出来了吗
     }
 
-    // 这个合并两个有序数组写过几万遍 递归实现
+    // 这个合并两个有序数组写过几万遍
     private static void merge(int[] array, int left, int mid, int right) {
         int[] tmp = new int[right - left + 1];
         int k = 0;
@@ -383,15 +385,83 @@ public class Sort {
                 if (mid >= array.length) {
                     mid = array.length - 1;
                 }
-                int right = mid + gap - 1;
+                int right = mid + gap;
                 if (right >= array.length) {
                     right = array.length - 1;
                 }
-                merge(array, left, mid, right);
+                if (mid < right) {
+                    merge(array, left, mid, right);
+                }
             }
             gap *= 2;
         }
     }
 
-    // 计数排序⼜称为鸽巢原理，是对哈希直接定址法的变形应⽤
+    /**
+     * 计数排序
+     *
+     * @param array 待排序数组
+     *              时间复杂度 O(N/范围)
+     *              空间复杂度 O(范围)
+     *              计数排序⼜称为鸽巢原理 是对哈希直接定址法的变形应⽤ 这个排序不需要比较
+     *              比较适用于集中在某个区间内的数据组合
+     *              稳定的排序 但我写的不稳定
+     */
+    public static void countSort(int[] array) {
+        int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+        int n = array.length;
+        // 找数组的最大值和最小值
+        for (int i = 0; i < n; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        int[] count = new int[max - min + 1];
+        for (int i = 0; i < n; i++) {
+            count[array[i] - min]++;    // 要 - min 试试 2 3 4 4 5 这个数组就懂了
+        }
+        int k = 0;
+        for (int i = 0; i < count.length; i++) {
+            while (count[i] != 0) {
+                array[k++] = i + min; // 这里要 + min
+                count[i]--;
+            }
+        }
+    }
+
+    public static void countSortStable(int[] array) {
+        int max = -1, min = Integer.MAX_VALUE;
+        int n = array.length;
+        for (int i = 0; i < n; i++) {
+            if (array[i] > max) max = array[i];
+            if (array[i] < min) min = array[i];
+        }
+        int[] count = new int[max - min + 1];
+        for (int i = 0; i < n; i++) {
+            count[array[i] - min]++;
+        }
+        // 前缀和，确定每个元素的最终位置
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+        int[] output = new int[n];
+        // 从后往前遍历，保证稳定性
+        for (int i = n - 1; i >= 0; i--) {
+            int value = array[i];
+            int pos = count[value - min] - 1;
+            output[pos] = value;
+            count[value - min]--;
+        }
+        // 拷贝回原数组
+        System.arraycopy(output, 0, array, 0, n);
+    }
+
+    // 基数排序 先找最大数的位数 就是入桶次数和出桶次数 先比较个位数 再十位数 再百位数...
+    // 桶用队列来实现 JavaDS 5-16 那个视频1时35分左右
+    public static void radixSort(int[] array) {
+
+    }
 }
