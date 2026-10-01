@@ -1,6 +1,7 @@
-package set;
+package demo1;
 
 // 二叉搜索树
+// 左 < 根 < 右
 public class BinarySearchTree {
     // 静态内部类
     static class TreeNode {

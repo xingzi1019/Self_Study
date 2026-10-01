@@ -1,4 +1,4 @@
-package set;
+package demo1;
 
 public class Test {
     // TreeSet 和 TreeMap 是搜索树 红黑树
