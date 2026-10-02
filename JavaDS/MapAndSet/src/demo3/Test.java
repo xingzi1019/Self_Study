@@ -1,6 +1,6 @@
 package demo3;
 
-import java.util.Objects;
+import java.util.*;
 
 // hashCode() 是 Java 中 Object 类的一个方法，主要作用是
 // 为对象生成一个整数哈希值，用于支持基于哈希的数据结构
@@ -24,9 +24,39 @@ class Student {
         return Objects.hashCode(id);
     }
 }
-
+/*
+一.不管调用哪个构造方法 第一次 put 的时候 才会分配内存
+    1)如果调用的是 不带参数的构造方法 最终数组是默认容量16
+    2)
+二.树化条件
+     数组容量 >= 64 && 链表的长度 >= 8
+三.hashCode 和 equals 方法的区别
+四.扩容需要注意什么?
+     注意重新哈希每一个值
+ */
 public class Test {
     public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("bit", 1);
+        map.put("java119", 3);
+        map.put("java119", 13);
+        System.out.println(map);
+
+        // 如果要⽤⾃定义类作为 HashMap 的 key 或者 HashSet 的值，必须覆写
+        // hashCode 和 equals ⽅法，⽽且要做到 equals 相等的对象，hashCode ⼀定是⼀致的
+        // 反之不一定
+        HashSet<String> set = new HashSet<>();
+        set.add("hello");
+        set.add("abcd");
+        set.add("abcd");
+        System.out.println(set);
+        // TreeSet 底层是 TreeMap
+        // TreeMap
+        // HashSet 底层是 HashMap
+        // HashMap
+    }
+
+    public static void main2(String[] args) {
         Student student1 = new Student("123456");
         int hashCode = student1.hashCode();
         System.out.println(hashCode);
