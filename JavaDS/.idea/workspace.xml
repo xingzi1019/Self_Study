@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28bbc97c-e20c-4a33-b7aa-a6561e510baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AaaHomework/src/ds_5_25/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/ReflectionEnumLambda.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/src/enumdemo/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/src/enumdemo/TestEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/src/reflectdemo/ReflectDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/src/reflectdemo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionEnumLambda/src/reflectdemo/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AaaHomework/src/ds_5_25/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/AaaHomework/src/ds_5_25/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MapAndSet/src/demo3/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/MapAndSet/src/demo3/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +26,7 @@
       <list>
         <option value="Exception" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -40,33 +48,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Card.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CardDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestLinkedList.executor&quot;: &quot;Run&quot;,
-    &quot;Application.demo.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.demo1.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.demo2.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.set.Test.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/My_Code/my-own-study/JavaDS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Card.executor": "Run",
+    "Application.CardDemo.executor": "Run",
+    "Application.ReflectDemo.executor": "Run",
+    "Application.Test (1).executor": "Run",
+    "Application.Test (2).executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TestDemo.executor": "Run",
+    "Application.TestEnum.executor": "Run",
+    "Application.TestLinkedList.executor": "Run",
+    "Application.demo.Test.executor": "Run",
+    "Application.demo1.Test.executor": "Run",
+    "Application.demo2.Test.executor": "Run",
+    "Application.set.Test.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/My_Code/my-own-study/JavaDS",
+    "settings.editor.selected.configurable": "editor.preferences.folding"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="List" />
@@ -198,7 +208,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MapAndSet/src/demo3/Test.java</url>
-          <line>118</line>
+          <line>123</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

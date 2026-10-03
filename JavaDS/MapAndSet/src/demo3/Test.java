@@ -68,6 +68,11 @@ public class Test {
         // 两者的哈希值不一致
 
         // 重写了 equals 和 hashCode 就一样了
+        /*
+            因为哈希值的来源变了：默认 Object.hashCode() 基于对象身份（内存地址/identity hash）生成，每个新对象都不同
+            重写后hashCode() 返回 Objects.hashCode(id)，即由 id 字段内容计算
+            而两个对象的 id 都是 "123456"，String 的哈希值由内容决定，所以结果相同
+         */
         // 都是 1450575459
         // 再注释回去就是原本的数值了
         HashBucket2<Student, String> hashBucket2 = new HashBucket2<>();
