@@ -196,4 +196,87 @@ public class Solution {
         }
         return list;
     }
+
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> ret = new ArrayList<>();
+        Arrays.sort(nums);
+        int n = nums.length;
+        for (int i = 0; i < n && nums[i] <= 0; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int left = i + 1, right = n - 1, target = -nums[i];
+            while (left < right) {
+                int sum = nums[left] + nums[right];
+                if (sum < target) {
+                    left++; // 这里可能会l == r 但是不至于越界
+                } else if (sum > target) {
+                    right--; // 和上面一样
+                } else {
+                    List<Integer> hang = new ArrayList<>();
+                    hang.add(nums[left]);
+                    hang.add(nums[right]);
+                    hang.add(nums[i]);
+                    ret.add(hang);
+                    right--;
+                    left++;
+                    // 下面这里其实是在去重了
+                    while (left < right && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right + 1]) {
+                        right--;
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    // 18
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> ret = new ArrayList<>();
+        int n = nums.length;
+        for (int i = 0; i <= n - 4; i++) {
+            // i 要去重  -----> 自己竟然忘记了
+            if(i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
+            long need = target - nums[i];
+            for (int j = i + 1; j <= n - 3; j++) {
+                // j 也去重
+                if(j > i + 1 && nums[j] == nums[j-1]) {
+                    continue;
+                }
+                long needSum = need - nums[j];
+                int left = j + 1,right = n-1;
+                while(left < right) {
+                    int sum = nums[left] + nums[right];
+                    if(sum < needSum) {
+                        left++;
+                    } else if(sum > needSum) {
+                        right--;
+                    } else {
+                        List<Integer> temp = new ArrayList<>();
+                        temp.add(nums[i]);temp.add(nums[j]);temp.add(nums[left]);temp.add(nums[right]);
+                        ret.add(temp);
+                        left++;
+                        right--;
+                        // 同样是去重
+                        while(left < right && nums[left] == nums[left-1]) {
+                            left++;
+                        }
+                        while(left < right && nums[right] == nums[right+1]) {
+                            right--;
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+        // 因为有下面这种例子 所以 need 和 needSum 要改 long 而不是 int
+        // [1000000000,1000000000,1000000000,1000000000]
+        // t = -294967296
+    }
 }
