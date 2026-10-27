@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="FileUtils">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/LibraryProjectSystem/lib/FileUtils.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
