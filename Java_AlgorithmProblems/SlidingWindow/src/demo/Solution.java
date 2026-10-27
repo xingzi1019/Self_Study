@@ -253,19 +253,86 @@ public class Solution {
         return list;
     }
 
-//    // 30
-//    public List<Integer> findSubstring(String s, String[] words) {
-//
-//    }
-//
-//    // 76
+    // 30
+    public static List<Integer> findSubstring1(String s, String[] words) {
+        // 把步长的字符串当做是一个元素的话 简直就是上一题的异位词 哈希表 + 滑动窗口
+        List<Integer> list = new ArrayList<>();
+        HashMap<String, Integer> hashMap1 = new HashMap<>();
+        int len = words[0].length(); // 步长
+        int count = 0;
+        for (String str : words) {
+            hashMap1.put(str, hashMap1.getOrDefault(str, 0) + 1);
+            count++;
+        }
+        int wordLen = count * len;
+        for (int i = 0; i < len; i++) {
+            HashMap<String, Integer> hashMap2 = new HashMap<>();
+            for (int left = 0 + i, right = left; right + len <= s.length(); ) {
+                String t = s.substring(right, right + len);
+                hashMap2.put(t, hashMap2.getOrDefault(t, 0) + 1);
+                if (right - left >= wordLen) { // 有 + 1 就不用 = 没 + 1 才需要 =
+                    String tmp = s.substring(left, left + len);
+                    hashMap2.put(tmp, hashMap2.get(tmp) - 1);
+                    if (hashMap2.get(tmp) == 0) {
+                        hashMap2.remove(tmp);
+                    }
+                    left += len;
+                }
+                if (hashMap2.equals(hashMap1)) {
+                    list.add(left);
+                    String tmp = s.substring(left, left + len);
+                    hashMap2.put(tmp, hashMap2.get(tmp) - 1);
+                    if (hashMap2.get(tmp) == 0) {
+                        hashMap2.remove(tmp);
+                    }
+                    left += len;
+                }
+                right += len;
+            }
+        }
+        return list;
+    }
+
+    public static List<Integer> findSubstring(String s, String[] words) {
+        // 更加漂亮的代码
+        List<Integer> list = new ArrayList<>();
+        Map<String, Integer> hash1 = new HashMap<>();
+        for (String str : words) {
+            hash1.put(str, hash1.getOrDefault(str, 0) + 1);
+        }
+        int len = words[0].length(), m = words.length;
+        for (int i = 0; i < len; i++) {
+            Map<String, Integer> hash2 = new HashMap<String, Integer>();
+            for (int left = i, right = i, count = 0; right + len <= s.length(); right += len) {
+                String in = s.substring(right, right + len);
+                hash2.put(in, hash2.getOrDefault(in, 0) + 1);
+                if (hash2.get(in) <= hash1.getOrDefault(in,0)) {
+                    count++;
+                }
+                if (right - left + 1 > len * m) {
+                    String out = s.substring(left, left + len);
+                    if (hash2.get(out) <= hash1.getOrDefault(out, 0)) {
+                        count--;
+                    }
+                    hash2.put(out, hash2.get(out) - 1);
+                    left += len;
+                }
+                if (count == m) {
+                    list.add(left);
+                }
+            }
+        }
+        return list;
+    }
+
+    // 76
 
     // 704
     public int search(int[] nums, int target) {
         int n = nums.length;
         int left = 0, right = n - 1;
         int mid;
-        while (left < right) {
+        while (left <= right) {
             mid = (right - left) / 2 + left; // 这样不会溢出
             if (nums[mid] == target) {
                 return mid;
@@ -279,8 +346,9 @@ public class Solution {
     }
 
     public static void main() {
-        int[] nums = {3, 2, 20, 1, 1, 3};
-        int ret = minOperations(nums, 10);
+        String s = "barfoofoobarthefoobarman";
+        String[] words = {"bar", "foo", "the"};
+        List<Integer> ret = findSubstring(s, words);
         System.out.println(ret);
     }
 }
