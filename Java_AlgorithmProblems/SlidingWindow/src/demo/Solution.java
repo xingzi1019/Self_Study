@@ -306,7 +306,7 @@ public class Solution {
             for (int left = i, right = i, count = 0; right + len <= s.length(); right += len) {
                 String in = s.substring(right, right + len);
                 hash2.put(in, hash2.getOrDefault(in, 0) + 1);
-                if (hash2.get(in) <= hash1.getOrDefault(in,0)) {
+                if (hash2.get(in) <= hash1.getOrDefault(in, 0)) {
                     count++;
                 }
                 if (right - left + 1 > len * m) {
@@ -326,29 +326,82 @@ public class Solution {
     }
 
     // 76
-
-    // 704
-    public int search(int[] nums, int target) {
-        int n = nums.length;
-        int left = 0, right = n - 1;
-        int mid;
-        while (left <= right) {
-            mid = (right - left) / 2 + left; // 这样不会溢出
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] > target) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
+    public static String minWindow1(String ss, String tt) {
+        // 使用已有容器
+        if (ss == null || tt == null || ss.length() < tt.length()) {
+            return "";
+        }
+        char[] s = ss.toCharArray(), t = tt.toCharArray();
+        HashMap<Character, Integer> need = new HashMap<>();
+        HashMap<Character, Integer> window = new HashMap<>();
+        for (char c : t) {
+            need.put(c, need.getOrDefault(c, 0) + 1);
+        }
+        int left = 0, right = 0, count = 0;
+        int minLen = Integer.MAX_VALUE;
+        int start = 0;
+        while (right < s.length) {
+            char c = s[right++];
+            if (need.containsKey(c)) { // 代码能力 学会这么处理
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                if (window.get(c).intValue() == need.get(c).intValue()) {
+                    count++;
+                }
+            }
+            while (count == need.size()) {
+                if (right - left + 1 <= minLen) {
+                    minLen = right - left;
+                    start = left;
+                }
+                char d = s[left++];
+                if (need.containsKey(d)) {
+                    if (window.get(d).intValue() == need.get(d).intValue()) {
+                        count--;
+                    }
+                    window.put(d, window.get(d) - 1);
+                }
             }
         }
-        return -1;
+        return minLen == Integer.MAX_VALUE ? "" : ss.substring(start, start + minLen);
+    }
+
+    public static String minWindow(String ss, String tt) {
+        char[] s = ss.toCharArray();
+        char[] t = tt.toCharArray();
+        int[] hash1 = new int[128]; // 统计字符串 t 中每⼀个字符的频次
+        int kinds = 0; // 统计有效字符有多少种
+        for (char ch : t) {
+            if (hash1[ch]++ == 0) {
+                kinds++;
+            }
+        }
+        int[] hash2 = new int[128]; // 统计窗⼝内每个字符的频次
+        int minlen = Integer.MAX_VALUE, begin = -1;
+        for (int left = 0, right = 0, count = 0; right < s.length; right++) {
+            char in = s[right];
+            if (++hash2[in] == hash1[in]) {
+                count++; // 进窗⼝ + 维护 count
+            }
+            while (count == kinds) {
+                if (right - left + 1 < minlen) {
+                    minlen = right - left + 1;
+                    begin = left;
+                }
+                char out = s[left++];
+                if (hash2[out]-- == hash1[out]) count--; // 出窗⼝ + 维护 count
+            }
+        }
+        if (begin == -1) {
+            return new String();
+        } else {
+            return ss.substring(begin, begin + minlen);
+        }
     }
 
     public static void main() {
-        String s = "barfoofoobarthefoobarman";
-        String[] words = {"bar", "foo", "the"};
-        List<Integer> ret = findSubstring(s, words);
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        String ret = minWindow(s, t);
         System.out.println(ret);
     }
 }
