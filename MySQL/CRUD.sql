@@ -76,13 +76,13 @@ SELECT DISTINCT name,math FROM exam;
 -- NULL 这个值是可以参与到各种算数运算当中的 但是运算结果还是 NULL
 -- 1 + null 得到 null
 -- 1 == null 得到 null
--- <=> 等于 对于 null 的比较是安全的 比如 NULL <=> NULL 的结果还是 TRUE
+-- <=> 等于 对于 null 的比较是安全的 比如 NULL <=> NULL 的结果还是 TRUE     -- 也叫做潜水艇运算符
 -- != <> 不等于
 -- value BETWEEN a0 AND a1 闭区间
 -- VALUE IN (option,...) 如果value 在 option 列表中 则返回TRUE(1) NOT IN 则取反
 -- IS NULL 是NULL
 -- IS NOT NULL 不是NULL
--- LIKE 模糊匹配 % 表示任意多个(包括0个)字符; _表示任意一个字符,NOT LIKE则取反
+-- LIKE 模糊匹配  % 表示任意多个(包括0个)字符; _表示任意一个字符,NOT LIKE则取反
 
 -- 运算符
 -- AND 类似 &&
@@ -121,4 +121,121 @@ SELECT name,chinese FROM exam where chinese >= 80 && chinese <= 90;
 SELECT name,chinese FROM exam WHERE chinese BETWEEN 80 AND 90;
 -- 这上面两行代码执行结果一致
 INSERT INTO exam(name,chinese) VALUES('关云长',80),('张翼德',90);
+
+-- 下面这两个结果一样
+SELECT name,math FROM exam WHERE math = 78 OR math = 79 OR math = 98 OR math = 99;
+SELECT name,math FROM exam WHERE math in(78,79,98,99);
+
+-- 模糊查询
+/*
+like
+两个通配符: % _ 
+% 表示任意多个(包括0个)字符;
+_表示任意一个字符
+*/
+-- 查询所有姓孙的同学
+INSERT INTO exam (NAME)VALUES('孙悟空行者'),("孙行者"),("者行孙"),("行者孙"),('行孙者'),('孙');
+
+SELECT name from exam where name like "孙%";  -- 孙开头
+SELECT name from exam where name like "%孙";  -- 孙结尾
+SELECT name from exam where name like "%孙%"; -- 有孙
+
+-- 查询姓孙且姓名共有两个字同学
+SELECT name from exam where name like "孙_";
+SELECT name from exam where name like "孙__";
+SELECT name from exam where name like "孙___";
+SELECT name from exam where name like "孙____";
+-- 有些字体下_连线多了就数不清多少个了
+-- SQL使用like进行模糊匹配 通常是一个低效操作 
+-- NULL 的查询
+
+SELECT * FROM exam;
+-- 查询英语成绩为 null 的记录
+select * from exam where english = null; -- 啥都没有 english = null 结果是 null 等同于 false
+select * FROM exam where english <=> null; -- 注意要使用 <=> 而不是 =
+select * FROM exam where english is null;
+-- 查询英语成绩等于语文成绩
+select * FROM exam where english <=> chinese;
+-- 查询英语成绩不为空
+select * FROM exam where english is not null;
+
+-- NULL与其他值进行运算结果为null
+-- 由于 null + x 等于 null 所以只要有一项成绩为空的人 下面这条查询就会为 null
+select name,chinese + math + english from exam;
+
+
+-- select SQL,不加显式的排序，此时得到的结果的顺序,是不确定的
+-- 这个默认的顺序可能会因为后面的增删查改 而改变
+-- 因为数据库没有提供这个承诺
+
+-- order by
+-- 语法 
+-- order by 指定的表达式可以是 列名 表达式 也可以是别名
+-- ASC 为升序（从小到大）
+-- DESC 为降序（从大到小） descend
+-- 默认为 ASC
+SELECT ... FROM table_name [WHERE ...] ORDER BY {col_name | expr } [ASC | DESC], ... ;
+-- 空在排序中默认为最小值
+SELECT name,math FROM exam ORDER BY math;
+-- 如果存在多个行相等的情况下 这几行的排序也是没有规定的
+select name,chinese from exam ORDER BY chinese asc;  -- asc可以不写 
+select name,chinese from exam ORDER BY chinese desc; -- 加了 desc 变成降序
+
+select name,chinese from exam where chinese is not null order by chinese desc;
+select name as name2,chinese as chinese2 from exam as exam2 where chinese is not null order by chinese desc;
+
+-- order by 的时候可以指定多个列
+select name,english,chinese,math FROM exam 
+where chinese is not null and math is not null and english is not null 
+order by math desc,chinese,english;
+-- 还能再加 as
+select * FROM exam 
+where chinese is not null and math is not null and english is not null 
+order by math desc,chinese,english;
+-- 先按数学成绩降序排 数学成绩一样再按语文升序排 语文成绩也一样再按英语成绩升序排
+
+select name,chinese + math + english as total from exam ORDER BY total; 
+-- 这里能使用 total 但是 where 那里不行 记得区分开来
+
+-- sql 带有 order by, order by是在列的表达式求值之后
+-- 1.遍历表
+-- 2.把当前行带入到条件中，判定这一行是否要保留
+-- 3.根据 select 的列名,把这里的列筛选出来/计算表达式的值/定义别名
+-- 4.order by 排序
+
+select 
+  name,
+  chinese + math + english as total 
+from 
+  exam 
+where 
+  chinese + math + english is not null 
+ORDER BY 
+  total desc;
+-- order by 的排序是针对临时表来展开的 和 数据库服务器保存的原始数据 无关
+-- 数据库排序大部分使用归并排序   (外部排序)
+
+-- 解决上面那种查询方式占用过多数据库资源的情况
+-- 可以通过以下几种方法
+-- 1.不要在生产环境裸跑 select *
+-- 2.强制分页
+-- 3.数据库层防护
+-- 4.应用层防护
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

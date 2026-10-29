@@ -341,7 +341,7 @@ public class Solution {
         int minLen = Integer.MAX_VALUE;
         int start = 0;
         while (right < s.length) {
-            char c = s[right++];
+            char c = s[right++]; // 注意 这里的 right 已经++ 了 下面的判断要额外小心
             if (need.containsKey(c)) { // 代码能力 学会这么处理
                 window.put(c, window.getOrDefault(c, 0) + 1);
                 if (window.get(c).intValue() == need.get(c).intValue()) {
@@ -376,15 +376,15 @@ public class Solution {
             }
         }
         int[] hash2 = new int[128]; // 统计窗⼝内每个字符的频次
-        int minlen = Integer.MAX_VALUE, begin = -1;
+        int minLen = Integer.MAX_VALUE, begin = -1;
         for (int left = 0, right = 0, count = 0; right < s.length; right++) {
             char in = s[right];
             if (++hash2[in] == hash1[in]) {
                 count++; // 进窗⼝ + 维护 count
             }
             while (count == kinds) {
-                if (right - left + 1 < minlen) {
-                    minlen = right - left + 1;
+                if (right - left + 1 < minLen) {
+                    minLen = right - left + 1;
                     begin = left;
                 }
                 char out = s[left++];
@@ -394,7 +394,7 @@ public class Solution {
         if (begin == -1) {
             return new String();
         } else {
-            return ss.substring(begin, begin + minlen);
+            return ss.substring(begin, begin + minLen);
         }
     }
 
