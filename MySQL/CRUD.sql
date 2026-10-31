@@ -222,20 +222,86 @@ ORDER BY
 -- 3.数据库层防护
 -- 4.应用层防护
 
+-- 分页排序语法如下
+-- 起始下标为 0
+-- 从 0 开始，筛选 num 条结果
+SELECT ... FROM table_name [WHERE ...] [ORDER BY ...] LIMIT num;
+-- 从 start 开始，筛选 num 条结果
+SELECT ... FROM table_name [WHERE ...] [ORDER BY ...] LIMIT start, num; -- 从哪条数据开始 最多返回多少条数据
+-- 从 start 开始，筛选 num 条结果，比第⼆种用法更明确，建议使用
+SELECT ... FROM table_name [WHERE ...] [ORDER BY ...] LIMIT num OFFSET start; -- 下标 偏移量
 
 
+select * from exam;
+select * from exam LIMIT 3;
+select * from exam LIMIT 3 OFFSET 3;
 
+-- 每一页有 n 页 m 个数据
+-- 应该 offset (n-1) * m 
+-- 虽然这里比较好算 但是确实存在算错的可能
+-- 以后开发的时候，有一些相关的第三方库 帮我们算好了 比如(PageHelper)
 
+-- 以后要在生产环境上查询数据 一定要加上 limi
 
+-- 生产环境的数据库 主要都是通过 "写代码" 的方式来操作的
+-- java/C++操作数据库
 
+-- 生产环境的数据库 是一组专门的服务器
+-- 访问服务器是有严格的限制的
+-- 数据库的端口大概率是不会对外暴露的 也会设置相应的防火墙
 
+-- navicat 链接数据库是依赖数据库服务器的端口的
+-- 得是端口可以访问 才能够通过 navicat 连上数据库
+-- 或者也可以把 navicat 依赖的网络端口(3306)通过特殊手段(比如端口映射) 映射到本地
 
+-- 工作时真正最简单的方法是直接使用命令行
+-- 直接登录到对应的服务器上，直接通过mysql命令行客服端操作
 
+-- update 修改
+-- 语法
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+ SET assignment [, assignment] ...
+ [WHERE where_condition]
+ [ORDER BY ...]
+ [LIMIT row_count]
+ 
+-- 将孙悟空同学的数学成绩变更为 80 分
+select * from exam;
+update exam set math = 80 where NAME = '孙悟空';
 
+-- 将曹孟德同学的数学成绩变更为 60 分，语文成绩变更为 70 分
+select name,chinese,math,english FROM exam where name = "曹孟德";
+UPDATE exam set math = 60,chinese = 78 where name = "曹孟德";
 
+-- 将总成绩倒数前三的 3 位同学的数学成绩加上 30 分
+select * from exam where chinese + math + english is not null order by chinese + math + english limit 3;
+select * from exam where chinese is not null and math is not null and english is not null order by chinese + math + english limit 3;
+update exam set math = math + 30 where chinese + math + english is not null order by chinese + math + english limit 3;
 
+-- 将所有同学的语文成绩更新为原来的 2 倍
+update exam set chinese = chinese * 2;
 
+-- 注意事项
+-- 以原值的基础上做变更时，不能使⽤math += 30这样的语法
+-- 不加where条件时，会导致全表数据被列新，谨慎操作
 
+-- delete 删行
+-- drop 删库 删表
+-- 语法
+DELETE FROM tbl_name [WHERE where_condition] [ORDER BY ...] [LIMIT row_count];
 
+-- 删除孙悟空同学的考试成绩
+select * from exam;
+delete from exam where name = "孙悟空";
 
+-- 下面两行代码的执行结果一致
+delete from exam where chinese + math + english is null;
+delete from exam where chinese is null or math is null or english is null;
 
+-- 删除表
+-- 删除了表的数据 表的本体结构还在
+-- 前面的 drop 是直接整个表和结构都没了
+delete from exam;
+-- 这个是一行一行删除的
+-- 截断表速度很快 不过这个是极度危险的操作
+TRUNCATE [TABLE] table_name;
