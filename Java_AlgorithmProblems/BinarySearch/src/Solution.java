@@ -55,18 +55,60 @@ public class Solution {
         return ret;
     }
 
-    // 35
-    public int searchInsert(int[] nums, int target) {
-
+    // 69  左闭右闭 + 右偏 mid
+    public static int mySqrt(int x) {
+        // 还是有一些细节需要注意的
+        if (x == 0) return 0;
+        long left = 1, right = x;
+        while (left < right) {
+            long mid = (right - left + 1) / 2 + left;
+            if (mid * mid > x) {
+                right = mid - 1;
+            } else {
+                left = mid;
+            }
+        }
+        return (int) left;
     }
 
-    public static void main() {
-        int[] nums = {5, 7, 7, 8, 8, 10};
-        int target = 8;
-        int[] ret = searchRange(nums, target);
-        for (int i : ret) {
-            System.out.println(i);
+    // 下面这个也是对的 左闭右开 左偏 mid
+    public static int mySqrt2(int x) {
+        if (x == 0) return 0;
+        long left = 1;
+        long right = (long) x + 1; // 左闭右开区间 [left, right)
+        while (left < right) {
+            long mid = left + (right - left) / 2; // 左偏 mid
+            if (mid * mid > x) {
+                right = mid;        // 答案在 [left, mid) 中
+            } else {
+                left = mid + 1;     // 答案在 [mid+1, right) 中
+            }
         }
+        return (int) (left - 1);
+    }
+
+    // 35
+    public static int searchInsert(int[] nums, int target) {
+        int left = 0, right = nums.length - 1, ret = -1; // ret >= target
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
+
+
+    public static void main() {
+        int[] nums = {1,3,5,6};
+        int target = 7;
+        int ret = searchInsert(nums,target);
+        System.out.println(ret);
     }
 }
 
