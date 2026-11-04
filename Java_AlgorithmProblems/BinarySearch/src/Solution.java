@@ -103,11 +103,51 @@ public class Solution {
         return left;
     }
 
+    // 852
+    public int peakIndexInMountainArray(int[] arr) {
+        int left = 1, right = arr.length - 2; // 最左边和最右边不会是答案
+        while (left < right) {
+            int mid = left + (right - left + 1) / 2;
+            if (arr[mid - 1] > arr[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid; // 先得出这个
+            }
+        }
+        return left;
+    }
+
+    // 162
+    public int findPeakElement(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left + 1) / 2;
+            if (nums[mid - 1] > nums[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid;
+            }
+        }
+        return left;
+    }
+
+    // 153
+    public static int findMin(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if(nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return nums[left];
+    }
 
     public static void main() {
-        int[] nums = {1,3,5,6};
-        int target = 7;
-        int ret = searchInsert(nums,target);
+        int[] nums = {4,5,6,7,0,1,2};
+        int ret = findMin(nums);
         System.out.println(ret);
     }
 }
