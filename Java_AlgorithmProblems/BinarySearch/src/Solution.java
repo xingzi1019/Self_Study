@@ -146,9 +146,48 @@ public class Solution {
     }
 
     // LCR 173
+    public int takeAttendance1(int[] records) {
+        int[] arr = new int[records.length];
+        for (int i = 0; i < records.length; i++) {
+            arr[i] = i;
+        }
+        int ret = records[0];
+        for (int i = 1; i < records.length; i++) {
+            ret ^= records[i];
+        }
+        for (int x : arr) {
+            ret ^= x;
+        }
+        return ret;
+    }
+
+    // 和上面的一样也是位运算 明显下面这个时间复杂段比较小 不过还是 O(N)
+    public int takeAttendance2(int[] records) {
+        int ret = 0; // 应该异或的长度比所给数组长度多一
+        for (int i = 0; i < records.length; i++) {
+            ret ^= records[i] ^ (i + 1);
+        }
+        return ret;
+    }
+
     public int takeAttendance(int[] records) {
         int left = 0, right = records.length - 1;
-        
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (records[mid] == mid) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        // [1] 过不了
+        /*if (left == records.length-1) {
+            return left+1;
+        }*/
+        // 下面这样就对了
+        if (records[left] == left)
+            return left + 1;
+        return left;
     }
 
     public static void main() {
